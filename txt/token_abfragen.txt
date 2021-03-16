@@ -1,0 +1,13 @@
+klTokenVoteA/B/C;Natur;Muellwandler;
+nlTokenVoteA/B/C;Natur;Chaos zu Hause;
+neTokenVoteA/B/C;Natur;Windkraftanlagen;
+knTokenVoteA/B/C;Natur;Schafe auf dem Dach;
+enTokenVoteA/B/C;Mensch;Iconen des Konsums;
+koTokenVoteA/B/C;Mensch;Smartin;
+reTokenVoteA/B/C;Mensch;Nicht Regional;
+zwTokenVoteA/B/C;Mensch;Zeitbank;
+nkTokenVoteA/B/C;Technik;Zahn-O-Bots;
+eeTokenVoteA/B/C;Technik;Reiseziel: E-Dorado;
+suTokenVoteA/B/C;Technik;Digitale Nachlass;
+mmTokenVoteA/B/C;Technik;Robert 8.0;
+gtTokenVoteA/B/C;Technik;Genetische Partner;
