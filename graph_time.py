@@ -169,7 +169,7 @@ def graph_time_path_visits(region_time_database, coordinates_file, daily_scan_lo
     ####graphs
     regionTimesAvgFig = px.pie(region_time_df, names=["Technik", "Natur", "Mensch", "Genetic"],
                                values=region_time_df.iloc[0, 1:], title="Average Time per Region per Armband in Hours")
-    dateTotalArmbandsFig = px.line(totalArmbands_df, x="Date", y="Armbands",
+    dateTotalArmbandsFig = px.bar(totalArmbands_df, x="Date", y="Armbands",
                                    title="Total Armbands per Day\n Total Armbands since " + sinceDate + " = " + totalArmbandsAlltime)
 
     pio.write_html(regionTimesAvgFig, file=str(global_variables.region_average_times), auto_open=False)
@@ -207,7 +207,10 @@ def graph_time_path_visits(region_time_database, coordinates_file, daily_scan_lo
     for i in x:
         color = colors[iteration_counter]
         # add start marker
-        fig.add_trace(go.Scatter(x=np.array(i[0]), y=np.array(y[iteration_counter][0]), mode='markers',
+        print("x = ", x)
+        print("y = ", y)
+        fig.add_trace(go.Scatter(x=np.array(i[0]), y=np.array(y[iteration_counter][0]),
+                                 mode='markers',
                                  name='Start ' + point_times[iteration_counter][0],
                                  marker={'size': 12, 'symbol': symbols[iteration_counter],
                                          'color': colors[iteration_counter]}))
