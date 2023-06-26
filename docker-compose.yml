@@ -5,11 +5,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # environment:
-    #   - TZ=Europe/Berlin
     volumes:
       - ./backend:/backend
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     working_dir: /backend
+    environment:
+      - HOST_DATE_TIME=${DATE_TIME}
+      #TZ: "Europe/Berlin"
+      
+    # command: >
+    #   sh -c "ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && 
+    #   echo $TZ > /etc/timezone &&
+    #   python3 main.py"
+
 
 
 # x-common-variables: &common-variables
