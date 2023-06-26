@@ -1,0 +1,81 @@
+version: "3.4"
+
+services:
+  python_backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # environment:
+    #   - TZ=Europe/Berlin
+    volumes:
+      - ./backend:/backend
+    working_dir: /backend
+
+
+# x-common-variables: &common-variables
+#   MYSQL_USER: sampleuser
+#   MYSQL_PASSWORD: samplepassword
+#   MYSQL_DATABASE: fsx_db
+#   REACT_APP_SERVER_PORT: 8000
+
+# services:
+#   mysql-db:
+#     image: mysql:8.0
+#     container_name: mysql_container
+# #    command: --default-authentication-plugin=mysql_native_password
+#     environment:
+#       <<: *common-variables
+#       MYSQL_HOST: "192.168.1.200"
+#       MYSQL_ROOT_PASSWORD: root
+#     ports:
+#       - 3307:3307
+#     restart: unless-stopped
+#     volumes:
+# #      - ./db/fsx_test.sql:/docker-entrypoint-initdb.d/fsx_test.sql
+#       - /home/vasilis/fsx_app/db/config:/etc/mysql/conf.d
+#       - /home/vasilis/fsx_app/db/data:/var/lib/mysql
+
+#   phpmyadmin:
+#     depends_on:
+#       - mysql-db
+#     image: phpmyadmin/phpmyadmin
+#     container_name: phpadmin_container
+#     environment:
+#       PMA_HOST: mysql-db
+#     links:
+#       - mysql-db:mysql-db
+#     ports:
+#       - 8080:80
+#     restart: unless-stopped
+
+#   server:
+#     build: ./server
+#     container_name: node_server_container
+#     depends_on:
+#       - mysql-db
+#     environment:
+#       <<: *common-variables
+#       MYSQL_HOST_IP: mysql-db
+#     ports:
+#       - 8000:8000
+#     volumes:
+#       - ./server:/app
+#     links:
+#       - mysql-db
+#     restart: unless-stopped
+#     command: npm start
+
+#   client:
+#     build: ./client
+#     container_name: client_container
+#     environment:
+#       <<: *common-variables
+#       NODE_PATH: src
+#     ports:
+#       - 3000:3000
+#     volumes:
+#       - ./client/src:/app/src
+#     links:
+#       - server
+#     restart: unless-stopped
+#     command: npm start
