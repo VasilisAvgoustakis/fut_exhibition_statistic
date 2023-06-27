@@ -1,4 +1,18 @@
 from datetime import datetime
+import logging
+import os
+
+# Delete the logging file if it already exists
+if os.path.exists("./backend_log.txt",):
+    os.remove("./backend_log.txt",)
+
+
+logging.basicConfig(
+    level=logging.INFO,  # Set the desired log level (e.g., logging.INFO, logging.DEBUG)
+    format='%(asctime)s [%(levelname)s] %(message)s',  # Set the log message format
+    filename="./backend_log.txt",  # Set the log file path
+    filemode='a'  # Set the file mode: 'a' for append, 'w' for overwrite
+)
 
 #####variables regarding reading and graphing video plays
 assetLog_path_textfile = open("logs/assetLog_database_path.txt", "r")# open text file containing  assetLog Database file path as string
@@ -57,21 +71,20 @@ log_archive = "logs/token_archive_log.txt"
 sub_start_time = datetime.strptime("10:00:00", "%H:%M:%S").time()
 
 def checkEndTimes():
-    #read_graph_start_time = datetime.strptime("19:29:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 20:00
     day = datetime.today().weekday()
     now = datetime.now().time()
 
     if day == 3 :
-        print("Thursday")
+        logging.info("Thursday")
 
         sub_stop_time = datetime.strptime("19:35:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
 
     elif day == 1:
-        print("Schließtag")
-        sub_stop_time = datetime.strptime("09:00:00", "%H:%M:%S").time()# set that back to 9:00
+        logging.info("Schließtag")
+        sub_stop_time = datetime.strptime("22:11:00", "%H:%M:%S").time()# set that back to 9:00
 
     else:
-        print("Regular day")
+        logging.info("Regular day")
         sub_stop_time = datetime.strptime("17:35:00", "%H:%M:%S").time()
 
     return sub_stop_time

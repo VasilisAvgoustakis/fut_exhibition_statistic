@@ -7,12 +7,10 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./backend:/backend
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/backend/etc/localtime:ro
     working_dir: /backend
     environment:
-      - HOST_DATE_TIME=${DATE_TIME}
-      #TZ: "Europe/Berlin"
+      TZ: "Europe/Berlin"
       
     # command: >
     #   sh -c "ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && 

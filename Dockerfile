@@ -7,11 +7,8 @@ WORKDIR /backend
 # Copy the requirements file to the working directory
 COPY requirements.txt .
 
-# Set the time zone to Europe/Berlin
-#RUN ln -sf /usr/share/zoneinfo/Europe/Berlin /etc/localtime
-
 # Install the Python dependencies
-#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code to the working directory
 COPY . .
