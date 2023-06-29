@@ -1,0 +1,7 @@
+2023-06-28 16:09:56,225 [INFO] package: mysql.connector.plugins
+2023-06-28 16:09:56,225 [INFO] plugin_name: caching_sha2_password
+2023-06-28 16:09:56,232 [INFO] AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2023-06-28 16:09:56,232 [INFO] package: mysql.connector.plugins
+2023-06-28 16:09:56,232 [INFO] plugin_name: mysql_native_password
+2023-06-28 16:09:56,233 [INFO] AUTHENTICATION_PLUGIN_CLASS: MySQLNativePasswordAuthPlugin
+2023-06-28 16:09:56,287 [INFO] After daily parsing of scans in DB number of excesive/multiple scans is: 32

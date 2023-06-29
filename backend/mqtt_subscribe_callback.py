@@ -10,7 +10,7 @@ from multiprocessing import Process
 
 # callback function of mqtt sub listener
 def on_scan(client, stop, message):
-
+    
     # get current datetime and time
     now = datetime.now()
     currentTime = now.time()
@@ -18,18 +18,18 @@ def on_scan(client, stop, message):
 
     #call stop_on_msg_print function to check time and if recording must be paused, put the returned boolean in a variable
     #stop = stop_on_msg_print()
-    daily_report = open("logs/token_daily_log.txt", "a")
-    report_archive = open("logs/token_archive_log.txt", "a")
+    daily_scans_file = open(gv.daily_scans_file, "a")
+    scans_archive_file = open(gv.scans_archive_file, "a")
 
-    if currentTime < stop_time:
+    if currentTime > gv.sub_start_time and currentTime < stop_time:
         # get current time and date
         formated_date_time = now.strftime("%d.%m.%Y_%H:%M:%S")
         
         # write the token scan messages to daily_report file and archive file
-        daily_report.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")
-        report_archive.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")  # just for debugging and checking if stats are being counted correctly
-        daily_report.close()
-        report_archive.close()
+        daily_scans_file.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")
+        scans_archive_file.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")  # just for debugging and checking if stats are being counted correctly
+        daily_scans_file.close()
+        scans_archive_file.close()
 
     else: # log info
         gv.logging.info("Scan in invalid Timewindow occured!")
@@ -70,7 +70,7 @@ def on_scan(client, stop, message):
         # p4.terminate()
         # p5.terminate()
 
-        # daily_report.truncate(0)
+        #daily_report.truncate(0)
 
         #trap code in loop until its time to start the recording again
         # while True:
