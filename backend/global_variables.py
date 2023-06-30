@@ -17,13 +17,18 @@ logging.basicConfig(
 )
 
 # DB connection config
+dbconfig = {
+    "host": "mysql-db",
+    "user": "regular_user",
+    "port": "3306",
+    "password":"regular_pass",
+    "database":"futurium_exhibition_stats"
+}
 # Connect to the MySQL database
-db = mysql.connector.connect(
-    host="mysql-db",
-    user="regular_user",
-    port=3306,
-    password="regular_pass",
-    database="futurium_exhibition_stats"
+db_connection_pool = mysql.connector.pooling.MySQLConnectionPool(
+    pool_name="db_pool",
+    pool_size=5,
+    **dbconfig
 )
 
 
@@ -81,7 +86,7 @@ scans_archive_file = "./network_traffic_archives/token_archive_log.txt"
 
 
 ######Time System
-sub_start_time = datetime.strptime("17:18:00", "%H:%M:%S").time()
+sub_start_time = datetime.strptime("14:18:00", "%H:%M:%S").time()
 
 def checkEndTimes():
     day = datetime.today().weekday()
@@ -94,10 +99,10 @@ def checkEndTimes():
 
     elif day == 1:
         #logging.info("Schließtag")
-        sub_stop_time = datetime.strptime("22:11:00", "%H:%M:%S").time()# set that back to 9:00
+        sub_stop_time = datetime.strptime("09:00:00", "%H:%M:%S").time()# set that back to 9:00
 
     else:
         #logging.info("Regular day")
-        sub_stop_time = datetime.strptime("18:00:00", "%H:%M:%S").time()
+        sub_stop_time = datetime.strptime("16:29:00", "%H:%M:%S").time()
 
     return sub_stop_time
