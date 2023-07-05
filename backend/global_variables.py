@@ -1,7 +1,8 @@
 from datetime import datetime
 import logging
 import os
-import mysql.connector
+from mysql.connector import pooling
+from mysql.connector import Error
 
 
 # Delete the logging file if it already exists
@@ -16,6 +17,7 @@ logging.basicConfig(
     filemode='a'  # Set the file mode: 'a' for append, 'w' for overwrite
 )
 
+
 # DB connection config
 dbconfig = {
     "host": "mysql-db",
@@ -24,13 +26,17 @@ dbconfig = {
     "password":"regular_pass",
     "database":"futurium_exhibition_stats"
 }
-# Connect to the MySQL database
-db_connection_pool = mysql.connector.pooling.MySQLConnectionPool(
-    pool_name="db_pool",
-    pool_size=5,
-    **dbconfig
-)
 
+try:
+    # Connect to the MySQL database
+    db_connection_pool = pooling.MySQLConnectionPool(
+        pool_name="db_pool",
+        pool_size=1,
+        pool_reset_session =True,
+        **dbconfig
+    )
+except Exception as e:
+    logging.exception("Exception while creating Pool: %s", e)
 
 #####variables regarding reading and graphing video plays
 # assetLog_path_textfile = open("logs/assetLog_database_path.txt", "r")# open text file containing  assetLog Database file path as string
@@ -103,6 +109,6 @@ def checkEndTimes():
 
     else:
         #logging.info("Regular day")
-        sub_stop_time = datetime.strptime("16:29:00", "%H:%M:%S").time()
+        sub_stop_time = datetime.strptime("17:40:00", "%H:%M:%S").time()
 
     return sub_stop_time
