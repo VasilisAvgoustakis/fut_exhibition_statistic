@@ -4,16 +4,24 @@ import global_variables as gv #contains all global variables and file paths
 from datetime import datetime
 import time
 import paho.mqtt.subscribe as sub
-import scans_to_db
+import scans_to_db, assets_to_db
 
 
-def parser_process_wrapper():
+def scan_parser_process_wrapper():
     try:
         scans_to_db.process_daily_scans()
     except ValueError as e:
          gv.logging.error("Error occurred in process_daily_scans: %s", e)
     except Exception as e:
-        gv.logging.exception("ERROR in parser: ")
+        gv.logging.exception("ERROR in scan parser: ")
+
+def asset_parser_process_wrapper():
+    try:
+        assets_to_db.process_daily_asset_calls()
+    except ValueError as e:
+         gv.logging.error("Error occurred in process_daily_asset_calls: %s", e)
+    except Exception as e:
+        gv.logging.exception("ERROR in asset parser: ")
 
 def scan_listener_wrapper():
     try:
@@ -30,11 +38,16 @@ if __name__ == '__main__':
     scan_listener_process = Process(target=scan_listener_wrapper, args=())
 
     # process for storing daily scans to database at the end of each day
-    parse_daily_scans = Process(target=parser_process_wrapper, args=())
+    parse_daily_scans = Process(target=scan_parser_process_wrapper, args=())
+
+    # process for storing daily asset calls in DB at end of each day
+    parse_daily_asset_calls = Process(target=asset_parser_process_wrapper, args=())
 
     #start the listener
     scan_listener_process.start()
 
-    # start the db parser
+    # start the db scan parser
     parse_daily_scans.start()
     
+    # start the db asset parser
+    parse_daily_asset_calls.start()

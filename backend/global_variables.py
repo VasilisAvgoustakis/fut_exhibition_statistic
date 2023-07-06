@@ -18,26 +18,6 @@ logging.basicConfig(
 )
 
 
-# DB connection config
-dbconfig = {
-    "host": "mysql-db",
-    "user": "regular_user",
-    "port": "3306",
-    "password":"regular_pass",
-    "database":"futurium_exhibition_stats"
-}
-
-try:
-    # Connect to the MySQL database
-    db_connection_pool = pooling.MySQLConnectionPool(
-        pool_name="db_pool",
-        pool_size=1,
-        pool_reset_session =True,
-        **dbconfig
-    )
-except Exception as e:
-    logging.exception("Exception while creating Pool: %s", e)
-
 #####variables regarding reading and graphing video plays
 # assetLog_path_textfile = open("logs/assetLog_database_path.txt", "r")# open text file containing  assetLog Database file path as string
 # assetLog_path_string = assetLog_path_textfile.readline()#read the the first line of the file containing the path as string
@@ -85,14 +65,18 @@ except Exception as e:
 # exhibitions_paths = "/var/www/html/exhibition_paths.html"
 
 
-#log files
+#network traffic files
+#scans
 daily_scans_file = "./network_traffic_archives/token_daily_log.txt"
 scans_archive_file = "./network_traffic_archives/token_archive_log.txt"
+
+#assets
+daily_asset_log = "./network_traffic_archives/access.log"
 
 
 
 ######Time System
-sub_start_time = datetime.strptime("14:18:00", "%H:%M:%S").time()
+sub_start_time = datetime.strptime("10:00:00", "%H:%M:%S").time()
 
 def checkEndTimes():
     day = datetime.today().weekday()
@@ -101,7 +85,7 @@ def checkEndTimes():
     if day == 3 :
         #logging.info("Thursday")
 
-        sub_stop_time = datetime.strptime("17:20:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
+        sub_stop_time = datetime.strptime("17:30:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
 
     elif day == 1:
         #logging.info("Schließtag")
@@ -112,3 +96,14 @@ def checkEndTimes():
         sub_stop_time = datetime.strptime("17:40:00", "%H:%M:%S").time()
 
     return sub_stop_time
+
+def format_date_for_db(date_de):
+    date_splitted = date_de.split(".")
+    year = date_splitted[2]
+    month = date_splitted[1]
+    day = date_splitted[0]
+
+    date_db_formatted = year + "-" + month + "-" + day
+
+    
+    return date_db_formatted

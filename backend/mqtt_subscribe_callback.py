@@ -32,8 +32,8 @@ def on_scan(client, stop, message):
         scans_archive_file.close()
 
     else: # log info
-        gv.logging.info("Scan in invalid Timewindow occured!")
-
+        #gv.logging.info("Scan in invalid Timewindow occured!")
+        pass
 
 
     #if stop is True:

@@ -2,21 +2,36 @@ import global_variables as gv
 from datetime import datetime
 import time
 import global_variables as gv
-from global_variables import db_connection_pool
 from mysql.connector.cursor import MySQLCursor
-import mysql.connector
-from mysql.connector import Error
+from mysql.connector import pooling
+
 
 
 
 def process_daily_scans():
-    
-    # get current datetime and time
-    now = datetime.now()
-    currentTime = now.time()
-    stop_time = gv.checkEndTimes()
 
-    gv.logging.info("Parsing to DB function started...")
+    # DB connection config
+    dbconfig = {
+        "host": "mysql-db",
+        "user": "regular_user",
+        "port": "3306",
+        "password":"regular_pass",
+        "database":"futurium_exhibition_stats"
+    }
+
+    try:
+        # Connect to the MySQL database
+        db_connection_pool = pooling.MySQLConnectionPool(
+            pool_name="db_pool_scans",
+            pool_size=1,
+            pool_reset_session =True,
+            **dbconfig
+        )
+    except Exception as e:
+        gv.logging.exception("Exception while creating Pool: %s", e)
+
+    
+    gv.logging.info("Parsing daily scans function was called...")
 
     # counter for tries to insert duplicate code / station combinations per day
     multiple_scan_combi_counter = 0
@@ -66,7 +81,8 @@ def process_daily_scans():
                 #try:
                 # Split the line into its components
                 parts = line.strip().split("__")
-                scan_date, scan_time = parts[0].split("_")
+                scan_date = gv.format_date_for_db(parts[0].split("_")[0])
+                scan_time = parts[0].split("_")[1]
                 station_id = parts[1].split("/")[1]
                 band_code = parts[1].split('"')[1].strip()
                 #print(scan_date, scan_time)
@@ -101,9 +117,9 @@ def process_daily_scans():
             # close connection
             connection.close()
 
-            gv.logging.info("Parsing Completed Succesfully!")
-            gv.logging.info("After daily parsing of scans in DB number of excesive/multiple scans is: " + str(multiple_scan_combi_counter))
-            gv.logging.info("Waiting 12 hours until checking time for parsing again...")
+            gv.logging.info("Parsing Token Scans Completed Succesfully!")
+            gv.logging.info("After today's parsing of scans in DB number of excesive/multiple scans is: " + str(multiple_scan_combi_counter))
+            gv.logging.info("Waiting 12 hours until checking time for parsing token scans again...")
             time.sleep(43200)
         else:
             #gv.logging.info("Check if time to parse (once every Hour)")
