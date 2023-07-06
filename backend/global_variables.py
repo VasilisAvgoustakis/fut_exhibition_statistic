@@ -5,15 +5,25 @@ from mysql.connector import pooling
 from mysql.connector import Error
 
 
+# Get the current date and time
+current_datetime = datetime.now()
+
+# Format the date in the desired format
+date_string = current_datetime.strftime("%Y-%m-%d")
+
+# Append the formatted date to the log file name
+log_file_name = f"./backend_log_{date_string}.txt"
+
+
 # Delete the logging file if it already exists
-if os.path.exists("./backend_log.txt",):
-    os.remove("./backend_log.txt",)
+# if os.path.exists("./backend_log.txt",):
+#     os.remove("./backend_log.txt",)
 
 # basic loggin configuration
 logging.basicConfig(
     level=logging.INFO,  # Set the desired log level (e.g., logging.INFO, logging.DEBUG)
     format='%(asctime)s [%(levelname)s] %(message)s',  # Set the log message format
-    filename="./backend_log.txt",  # Set the log file path
+    filename=log_file_name,  # Set the log file path
     filemode='a'  # Set the file mode: 'a' for append, 'w' for overwrite
 )
 
@@ -85,7 +95,7 @@ def checkEndTimes():
     if day == 3 :
         #logging.info("Thursday")
 
-        sub_stop_time = datetime.strptime("17:30:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
+        sub_stop_time = datetime.strptime("18:00:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
 
     elif day == 1:
         #logging.info("Schließtag")
@@ -93,7 +103,7 @@ def checkEndTimes():
 
     else:
         #logging.info("Regular day")
-        sub_stop_time = datetime.strptime("17:40:00", "%H:%M:%S").time()
+        sub_stop_time = datetime.strptime("18:00:00", "%H:%M:%S").time()
 
     return sub_stop_time
 
