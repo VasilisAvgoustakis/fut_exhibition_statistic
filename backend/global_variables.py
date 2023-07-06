@@ -15,10 +15,6 @@ date_string = current_datetime.strftime("%Y-%m-%d")
 log_file_name = f"./backend_log_{date_string}.txt"
 
 
-# Delete the logging file if it already exists
-# if os.path.exists("./backend_log.txt",):
-#     os.remove("./backend_log.txt",)
-
 # basic loggin configuration
 logging.basicConfig(
     level=logging.INFO,  # Set the desired log level (e.g., logging.INFO, logging.DEBUG)
