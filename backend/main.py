@@ -44,10 +44,10 @@ if __name__ == '__main__':
     parse_daily_asset_calls = Process(target=asset_parser_process_wrapper, args=())
 
     #start the listener
-    scan_listener_process.start()
+    #scan_listener_process.start()
 
     # start the db scan parser
     parse_daily_scans.start()
     
     # start the db asset parser
-    parse_daily_asset_calls.start()
+    #parse_daily_asset_calls.start()

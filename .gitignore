@@ -1,1 +1,5 @@
 backend/backend_log.txt
+backend/network_traffic_archives/token_archive_log.txt
+backend/network_traffic_archives/token_archive_log.txt
+backend/__pycache__/global_variables.cpython-39.pyc
+.gitignore

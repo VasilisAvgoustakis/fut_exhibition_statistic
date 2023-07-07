@@ -1,0 +1,139 @@
+2023-07-07 13:09:19,095 [INFO] Starting Backend...
+2023-07-07 13:09:19,096 [INFO] Recording broker trafic subscribed to: tokenStations/+/onScan
+2023-07-07 13:09:19,160 [INFO] Parsing daily scans function was called...
+2023-07-07 13:09:19,164 [INFO] Succesfully connected to DB using Pool: db_pool_scans
+2023-07-07 13:09:19,166 [INFO] Succesfully to MySQL Server: 8.0.33
+2023-07-07 13:09:19,168 [INFO] Parsing daily scans to DB...
+2023-07-07 13:26:11,143 [ERROR] ERROR in scan parser: 
+Traceback (most recent call last):
+  File "/backend/main.py", line 12, in scan_parser_process_wrapper
+    scans_to_db.process_daily_scans()
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:37:38,343 [INFO] Starting Backend...
+2023-07-07 13:37:38,343 [INFO] Recording broker trafic subscribed to: tokenStations/+/onScan
+2023-07-07 13:37:38,432 [INFO] Parsing daily scans function was called...
+2023-07-07 13:37:38,435 [INFO] Succesfully connected to DB using Pool: db_pool_scans
+2023-07-07 13:37:38,436 [INFO] Succesfully to MySQL Server: 8.0.33
+2023-07-07 13:37:38,437 [INFO] Parsing daily scans to DB...
+2023-07-07 13:38:05,248 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,341 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,360 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,363 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,393 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,422 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,620 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,627 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,646 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,654 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,718 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,722 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,801 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:05,906 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:06,055 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:06,069 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:08,559 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:08,564 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:09,445 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:09,452 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:09,470 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:09,757 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:09,770 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range
+2023-07-07 13:38:10,041 [ERROR] Exception at Scan string processing!
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 87, in process_daily_scans
+    band_code = parts[1].split('"')[1].strip()
+IndexError: list index out of range

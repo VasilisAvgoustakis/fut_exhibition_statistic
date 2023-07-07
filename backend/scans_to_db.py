@@ -74,18 +74,20 @@ def process_daily_scans():
             gv.logging.info("Parsing daily scans to DB...")
 
             # Open the token log file for reading
-            file = open(gv.daily_scans_file, "r+")
+            file = open(gv.scans_archive_file, "r+")
             lines = file.readlines()
 
             for line in lines:
-                #try:
-                # Split the line into its components
-                parts = line.strip().split("__")
-                scan_date = gv.format_date_for_db(parts[0].split("_")[0])
-                scan_time = parts[0].split("_")[1]
-                station_id = parts[1].split("/")[1]
-                band_code = parts[1].split('"')[1].strip()
-                #print(scan_date, scan_time)
+                try:
+                    # Split the line into its component
+                    parts = line.strip().split("__")
+                    scan_date = gv.format_date_for_db(parts[0].split("_")[0])
+                    scan_time = parts[0].split("_")[1]
+                    station_id = parts[1].split("/")[1]
+                    band_code = parts[1].split('"')[1].strip()
+                    #print(scan_date, scan_time)
+                except Exception as e:
+                        gv.logging.exception("Exception at Scan string processing!")
                 try:
                     #Construct the SQL query to insert the values into the "scans" table
                     query = "INSERT INTO scans (scan_date, scan_time, scan_station_id, scan_band_code) VALUES (%s, %s, %s, %s)"

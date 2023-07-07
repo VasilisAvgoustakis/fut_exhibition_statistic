@@ -99,7 +99,7 @@ def checkEndTimes():
 
     else:
         #logging.info("Regular day")
-        sub_stop_time = datetime.strptime("18:00:00", "%H:%M:%S").time()
+        sub_stop_time = datetime.strptime("13:00:00", "%H:%M:%S").time()
 
     return sub_stop_time
 

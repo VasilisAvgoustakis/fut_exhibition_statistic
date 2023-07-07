@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 07. Jul 2023 um 15:03
+-- Erstellungszeit: 06. Jul 2023 um 15:34
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -67,14 +67,9 @@ CREATE TABLE `scans` (
 -- Trigger `scans`
 --
 DELIMITER $$
-CREATE TRIGGER `insert_unique_token_stations` BEFORE INSERT ON `scans` FOR EACH ROW BEGIN
-  INSERT INTO token_stations (tk_station_id, installation_date)
-  SELECT NEW.scan_station_id, MIN(scan_date)
-  FROM scans
-  WHERE scan_station_id = NEW.scan_station_id
-  ON DUPLICATE KEY UPDATE
-    tk_station_id = NEW.scan_station_id,
-    installation_date = LEAST(installation_date, MIN(scan_date));
+CREATE TRIGGER `scans_AFTER_INSERT` AFTER INSERT ON `scans` FOR EACH ROW BEGIN
+  INSERT IGNORE INTO token_stations (tk_station_id)
+  VALUES (NEW.scan_station_id);
 END
 $$
 DELIMITER ;
@@ -88,10 +83,8 @@ DELIMITER ;
 CREATE TABLE `token_stations` (
   `token_db_id` int NOT NULL,
   `tk_station_id` varchar(32) NOT NULL,
-  `installation_date` date DEFAULT NULL,
-  `theme_area` enum('human','technology','nature') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `theme_area` enum('human','tech','natur') DEFAULT NULL,
   `tk_type` enum('normal','vote','interactive') DEFAULT NULL,
-  `decomissioned` date DEFAULT NULL,
   `x_coord` float DEFAULT NULL,
   `y_coord` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
