@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 10. Jul 2023 um 16:20
+-- Erstellungszeit: 07. Jul 2023 um 15:03
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -89,12 +89,11 @@ CREATE TABLE `token_stations` (
   `token_db_id` int NOT NULL,
   `tk_station_id` varchar(32) NOT NULL,
   `installation_date` date DEFAULT NULL,
-  `theme_area` enum('human','technology','nature','gallery') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `theme_area` enum('human','technology','nature') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tk_type` enum('normal','vote','interactive') DEFAULT NULL,
   `decomissioned` date DEFAULT NULL,
   `x_coord` float DEFAULT NULL,
-  `y_coord` float DEFAULT NULL,
-  `month_offset` int DEFAULT ((case when (`installation_date` < _utf8mb4'2021-05-21') then 6 else 0 end))
+  `y_coord` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
