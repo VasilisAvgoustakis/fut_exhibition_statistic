@@ -1,7 +1,6 @@
 import global_variables as gv
 from datetime import datetime
 import time
-import global_variables as gv
 from mysql.connector.cursor import MySQLCursor
 from mysql.connector import pooling
 
@@ -9,6 +8,7 @@ from mysql.connector import pooling
 
 
 def process_daily_scans():
+    gv.logging.info("%s function was called...", process_daily_scans.__name__)
 
     # DB connection config
     dbconfig = {
@@ -22,16 +22,20 @@ def process_daily_scans():
     try:
         # Connect to the MySQL database
         db_connection_pool = pooling.MySQLConnectionPool(
-            pool_name="db_pool_scans",
+            pool_name="db_pool_scans_processing",
             pool_size=1,
             pool_reset_session =True,
             **dbconfig
         )
+
+        # get pool name
+        pool_name  = db_connection_pool.pool_name
+        
     except Exception as e:
-        gv.logging.exception("Exception while creating Pool: %s", e)
+        gv.logging.exception("Exception while creating Pool for function %s: %s", process_daily_scans.__name__, e)
 
     
-    gv.logging.info("Parsing daily scans function was called...")
+    
 
     # counter for tries to insert duplicate code / station combinations per day
     multiple_scan_combi_counter = 0
@@ -48,27 +52,28 @@ def process_daily_scans():
             try:
                 # Retrieve a connection from the pool
                 connection = db_connection_pool.get_connection() 
+                
+                db_Info = connection.get_server_info()
+
             except ValueError as e:
-                gv.logging.error("Error occurred while establishing database connection: %s", e)
+                gv.logging.error("Error occurred while establishing connection from pool %s: %s", pool_name, e)
             except Exception as e:
                 # Log or handle the exception
-                gv.logging.exception("Exception while establishing database connection: %s", e)
+                gv.logging.exception("Exception while establishing connection from pool %s: %s", pool_name, e)
 
             try:
                 if connection.is_connected():
                     # get connection Pool name
-                    pool_name  = db_connection_pool.pool_name
                     gv.logging.info("Succesfully connected to DB using Pool: %s", pool_name)
-                    db_Info = connection.get_server_info()
-                    gv.logging.info("Succesfully to MySQL Server: %s", db_Info)
+                    gv.logging.info("Succesfully connected to MySQL Server: %s", db_Info)
                     
                     # Create a cursor object to interact with the database
                     cursor = connection.cursor()               
             except ValueError as e:
-                gv.logging.error("Error occurred while creating cursor: %s", e)
+                gv.logging.error("Error occurred while creating cursor from connection to pool %s: %s", pool_name, e)
             except Exception as e:
                 # Log or handle the exception
-                gv.logging.exception("Exception while creating cursor: %s", e)
+                gv.logging.exception("Exception while creating cursor from connection to pool %s: %s", pool_name, e)
 
 
             gv.logging.info("Parsing daily scans to DB...")

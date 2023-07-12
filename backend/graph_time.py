@@ -207,10 +207,7 @@ def graph_time_path_visits(region_time_database, coordinates_file, daily_scan_lo
     for i in x:
         color = colors[iteration_counter]
         # add start marker
-        print("x = ", x)
-        print("y = ", y)
-        fig.add_trace(go.Scatter(x=np.array(i[0]), y=np.array(y[iteration_counter][0]),
-                                 mode='markers',
+        fig.add_trace(go.Scatter(x=np.array(i[0]), y=np.array(y[iteration_counter][0]), mode='markers',
                                  name='Start ' + point_times[iteration_counter][0],
                                  marker={'size': 12, 'symbol': symbols[iteration_counter],
                                          'color': colors[iteration_counter]}))

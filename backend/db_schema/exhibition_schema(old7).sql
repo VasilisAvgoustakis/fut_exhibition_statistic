@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 12. Jul 2023 um 15:54
+-- Erstellungszeit: 10. Jul 2023 um 16:20
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -48,20 +48,6 @@ CREATE TRIGGER `insert_video_player` AFTER INSERT ON `asset_calls` FOR EACH ROW 
 END
 $$
 DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `region_times`
---
-
-CREATE TABLE `region_times` (
-  `date` date NOT NULL,
-  `technology` float UNSIGNED NOT NULL,
-  `human` float UNSIGNED NOT NULL,
-  `nature` float UNSIGNED NOT NULL,
-  `interactive` float UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='stores the time in hours spend in each region by all users';
 
 -- --------------------------------------------------------
 

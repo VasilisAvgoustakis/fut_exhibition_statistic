@@ -6,6 +6,8 @@ from mysql.connector import Error
 
 def process_daily_asset_calls():
 
+    gv.logging.info("%s function was called...", process_daily_asset_calls.__name__)
+
     # DB connection config
     dbconfig = {
         "host": "mysql-db",
@@ -18,16 +20,19 @@ def process_daily_asset_calls():
     try:
         # Connect to the MySQL database
         db_connection_pool = pooling.MySQLConnectionPool(
-            pool_name="db_pool_assets",
+            pool_name="db_pool_asset_processing",
             pool_size=1,
             pool_reset_session =True,
             **dbconfig
         )
+        # get pool name and server info
+        pool_name  = db_connection_pool.pool_name
+        
     except Exception as e:
-        gv.logging.exception("Exception while creating Pool: %s", e)
+        gv.logging.exception("Exception while creating Pool for function %s: %s",process_daily_asset_calls.__name__, e)
 
 
-    gv.logging.info("Parsing daily Asset calls function was called...")
+    
 
     while True:
 
@@ -40,28 +45,27 @@ def process_daily_asset_calls():
             try:
                 # Retrieve a connection from the pool
                 connection = db_connection_pool.get_connection() 
+                db_Info = connection.get_server_info()
             except ValueError as e:
-                gv.logging.error("Error occurred while establishing database connection for Asset Parsing: %s", e)
+                gv.logging.error("Error occurred while establishing connection from pool %s: %s", pool_name, e)
             except Exception as e:
                 # Log or handle the exception
-                gv.logging.exception("Exception while establishing database connection for Asset Parsing: %s", e)
+                gv.logging.exception("Exception while establishing connection from pool %s: %s", pool_name, e)
 
 
             try:
                 if connection.is_connected():
-                    # get connection Pool name
-                    pool_name  = db_connection_pool.pool_name
+                
                     gv.logging.info("Succesfully connected to DB using Pool: %s", pool_name)
-                    db_Info = connection.get_server_info()
-                    gv.logging.info("Succesfully to MySQL Server: %s", db_Info)
+                    gv.logging.info("Succesfully connected to MySQL Server: %s", db_Info)
                     
                     # Create a cursor object to interact with the database
                     cursor = connection.cursor()               
             except ValueError as e:
-                gv.logging.error("Error occurred while creating cursor: %s", e)
+                gv.logging.error("Error occurred while creating cursor from connection to pool %s: %s", pool_name, e)
             except Exception as e:
                 # Log or handle the exception
-                gv.logging.exception("Exception while creating cursor: %s", e)
+                gv.logging.exception("Exception while creating cursor from connection to pool %s: %s", pool_name, e)
 
 
             gv.logging.info("Parsing daily Asset calls to DB...")
