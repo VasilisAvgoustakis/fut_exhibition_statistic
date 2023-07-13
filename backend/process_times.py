@@ -144,74 +144,42 @@ def process_scan_times():
                     # look in token_stations_df
                     # if the tk_statioin_id from the the df matches the id in current line
 
-                    for id in token_stations_df[0]:
-                        if tk_station_id == id:
-                            print(tk_station_id + " : " + region)
-    #               for e in id_region_map:  
-    #                     if e[0] in tokenstationId: 
-    #                         # print(e[0]+ " : " + tokenstationId)
-    #                         region = e[1]  # then that its mapped region
-    #                         tempToupple = (
-    #                         region, time)  # the touple of region and time to add in temp list t_occurence_perCode
-    #                         t_occurence_perCode.append(tempToupple)  # append it to the list
+                    for index, row in token_stations_df.iterrows():
+                        if tk_station_id == row[0]: # row[0] is the tk_station_id in the df
+                            region_time_tupple = (row[1], scan_time) # row[1] is the region
+                            # append tupple in temp list t_occurence_perCode
+                            t_occurence_perCode.append(region_time_tupple) 
+            print(t_occurence_perCode)
+            firstindex = 0
+            # iterate through time occurences of each codes scans
+            for t in t_occurence_perCode: 
+                reg1 = t[0]  # get the region of each touple
+                currCodeTime = t[1]  # get the time for each toupple
 
-    #                 ######graph map
-    #                 if today_codes.index(i) < 5:
-    #                     for id in stations_ids:
-    #                         if "Vote" in id:
-    #                             if tokenstationId == id or tokenstationId[:-1] + "A/B/C" == id:
-    #                                 if stations_x[coordinates_df[coordinates_df["Token IDs"] == id].index.item()] \
-    #                                         not in x[today_codes.index(i)] and stations_y[
-    #                                     coordinates_df[coordinates_df["Token IDs"] == id].index.item()] \
-    #                                         not in y[today_codes.index(i)]:
-    #                                     x[today_codes.index(i)].append(
-    #                                         stations_x[coordinates_df[coordinates_df["Token IDs"] == id].index.item()])
-    #                                     y[today_codes.index(i)].append(
-    #                                         stations_y[coordinates_df[coordinates_df["Token IDs"] == id].index.item()])
-    #                                     point_times[today_codes.index(i)].append(str(time))
+                #secondIndex = 0
+                # iterate through the touple list once more starting from next index
+                for r in t_occurence_perCode[firstindex + 1:]:  
 
-    #                         elif tokenstationId == id:
-
-    #                             if stations_x[coordinates_df[coordinates_df["Token IDs"] == id].index.item()] \
-    #                                     not in x[today_codes.index(i)] and stations_y[
-    #                                 coordinates_df[coordinates_df["Token IDs"] == id].index.item()] \
-    #                                     not in y[today_codes.index(i)]:
-    #                                 x[today_codes.index(i)].append(
-    #                                     stations_x[coordinates_df[coordinates_df["Token IDs"] == id].index.item()])
-    #                                 y[today_codes.index(i)].append(
-    #                                     stations_y[coordinates_df[coordinates_df["Token IDs"] == id].index.item()])
-    #                                 point_times[today_codes.index(i)].append(str(time))
-
-    #         firstindex = 0
-    #         # continue reading data for times
-    #         for t in t_occurence_perCode:  # iterate through the touple list for code currently being processed
-    #             reg1 = t[0]  # get the region of each touple
-    #             currCodeTime = t[1]  # get the time for each toupple
-
-    #             secondIndex = 0
-    #             for r in t_occurence_perCode[
-    #                      firstindex + 1:]:  # iterate through the touple list once more starting from next index
-
-    #                 # if reg1 == reg2 or reg1 !=:#if the region from loop matches the one from this loop
-    #                 delta = datetime.combine(date.today(), r[1]) - datetime.combine(date.today(),
-    #                                                                                 currCodeTime)  # calculate time diferrence
+                    #if reg1 == reg2 or reg1 !=:#if the region from loop matches the one from this loop
+                    # calculate time diferrence
+                    delta = datetime.combine(date.today(), r[1]) - datetime.combine(date.today(),
+                                                                                    currCodeTime) 
     #                 # currCodeTime = r[1]
 
-    #                 for key in t_SumsPerCode.keys():
-    #                     if key == reg1:
-    #                         t_SumsPerCode[key] += delta.total_seconds() / 3600  # seconds per hour
+                    for key in t_SumsPerCode.keys():
+                        if key == reg1:
+                            t_SumsPerCode[key] += delta.total_seconds() / 3600  # seconds per hour
+                    print (t_SumsPerCode)
+                    #secondIndex += 1
+                    break
+                firstindex += 1
 
-    #                 secondIndex += 1
-    #                 break
-    #             firstindex += 1
-
-    #         ###########graph map
-    #         # add the sum times of code currently iterated to the dict containing the sum times for today
-    #         day_sums["Technik"] += t_SumsPerCode["Technik"]
-    #         day_sums["Natur"] += t_SumsPerCode["Natur"]
-    #         day_sums["Mensch"] += t_SumsPerCode["Mensch"]
-    #         day_sums["Genetic"] += t_SumsPerCode["Genetic"]
-
+            # add the sum times of code currently iterated to the dict containing the sum times for today
+            day_sums["technology"] += t_SumsPerCode["technology"]
+            day_sums["nature"] += t_SumsPerCode["nature"]
+            day_sums["human"] += t_SumsPerCode["human"]
+            day_sums["Genetic"] += t_SumsPerCode["Genetic"]
+            
     # region_time_df.iat[0, 1] = (region_time_df.iat[0, 1]) + (day_sums["Technik"] / float(len(today_codes)))
     # region_time_df.iat[0, 2] = (region_time_df.iat[0, 2]) + (day_sums["Natur"] / float(len(today_codes)))
     # region_time_df.iat[0, 3] = (region_time_df.iat[0, 3]) + (day_sums["Mensch"] / float(len(today_codes)))

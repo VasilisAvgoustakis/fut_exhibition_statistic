@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 13. Jul 2023 um 18:06
+-- Erstellungszeit: 12. Jul 2023 um 15:54
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -135,12 +135,6 @@ CREATE TABLE `video_players` (
 ALTER TABLE `asset_calls`
   ADD PRIMARY KEY (`call_id`),
   ADD UNIQUE KEY `unique_index_per_minute` (`call_date`,`call_time`,`device_ip`);
-
---
--- Indizes für die Tabelle `region_times`
---
-ALTER TABLE `region_times`
-  ADD PRIMARY KEY (`date`);
 
 --
 -- Indizes für die Tabelle `scans`

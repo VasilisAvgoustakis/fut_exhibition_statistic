@@ -58,10 +58,10 @@ if __name__ == '__main__':
     #scan_listener_process.start()
 
     # start the db scan parser
-    #parse_daily_scans.start()
+    parse_daily_scans.start()
     
     # start the db asset parser
     #parse_daily_asset_calls.start()
 
     # start the time processesing
-    process_daily_times.start()
+    #process_daily_times.start()
