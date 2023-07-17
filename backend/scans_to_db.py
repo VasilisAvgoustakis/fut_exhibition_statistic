@@ -79,7 +79,7 @@ def process_daily_scans():
             gv.logging.info("Parsing daily scans to DB...")
 
             # Open the token log file for reading
-            file = open(gv.daily_scans_file, "r+")
+            file = open(gv.daily_scans_file, "r")
             lines = file.readlines()
 
             for line in lines:
@@ -98,11 +98,12 @@ def process_daily_scans():
                     #Construct the SQL query to insert the values into the "scans" table
                     query = "INSERT INTO scans (scan_date, scan_time, scan_station_id, scan_band_code) VALUES (%s, %s, %s, %s)"
                     values = (scan_date, scan_time, station_id, band_code)
-
+                    print(query)
                     #Execute the SQL query
                     cursor.execute(query, values)
                 except Exception as e:
                     multiple_scan_combi_counter += 1
+                    gv.logging.exception("INSERT : ")
                 
                 try: 
                     #Commit the changes to the database

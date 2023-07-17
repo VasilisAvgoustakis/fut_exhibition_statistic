@@ -1,0 +1,2249 @@
+2023-07-17 18:27:35,112 [INFO] Starting Backend...
+2023-07-17 18:27:35,113 [INFO] Recording broker trafic subscribed to: tokenStations/+/onScan
+2023-07-17 18:27:35,119 [INFO] process_daily_scans function was called...
+2023-07-17 18:27:35,134 [INFO] Succesfully connected to DB using Pool: db_pool_scans_processing
+2023-07-17 18:27:35,135 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-07-17 18:27:35,136 [INFO] Parsing daily scans to DB...
+2023-07-17 18:27:35,271 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-knTokenFarming-E0040150B18F035C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-knTokenFarming-E0040150B18F035C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,296 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18EAB53' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18EAB53' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,344 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18F4054' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18F4054' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,362 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-neTokenOrganisms-E0040150B18F8DDD' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-neTokenOrganisms-E0040150B18F8DDD' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,394 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,399 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,419 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F35CB' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,452 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-suTokenVirtualProduction-E0040150B18F13B6' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-suTokenVirtualProduction-E0040150B18F13B6' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,548 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18ED916' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18ED916' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,586 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18ED916' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18ED916' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,607 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,637 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,644 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,653 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,657 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,660 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,675 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,680 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,683 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,704 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,708 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-wbTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-wbTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,712 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-wbTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-wbTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,724 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F7A3E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F7A3E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,734 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F7A3E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F7A3E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,767 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,790 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,881 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,904 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,918 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FB777' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FB777' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,931 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,942 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,952 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,959 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,965 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,970 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,973 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,977 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,980 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,984 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,988 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,992 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,995 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:35,999 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,002 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,005 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,009 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,013 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,017 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,021 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,024 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,029 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,033 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,036 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,040 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,044 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteC-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,048 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteB-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,056 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,065 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenVoteA-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,069 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenIntercity-E0040150B18ED818' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenIntercity-E0040150B18ED818' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,080 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,084 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F2A56' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,087 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,094 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FB777' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FB777' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,105 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18FF456' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18FF456' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,154 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,200 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18E7A2D' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18E7A2D' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,232 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,236 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,241 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,262 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,266 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,273 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FF456' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18FF456' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,281 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,287 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,291 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteB-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteB-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,296 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,300 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,304 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteB-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteB-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,312 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteC-E0040150B18F3AA8' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,320 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,336 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,344 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,349 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,353 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,361 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,375 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,422 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenCyborgs-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenCyborgs-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,429 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,436 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18FB2CA' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18FB2CA' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,440 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,443 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,446 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,453 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenCyborgs-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenCyborgs-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,457 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,464 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,471 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18FF9D3' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18FF9D3' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,475 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F9983' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,482 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18EAA7D' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-enTokenStatusQuo-E0040150B18EAA7D' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,688 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,738 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,752 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,771 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,785 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F27C5' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F27C5' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,788 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,793 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,804 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18EFEAF' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,845 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,849 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics4-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,868 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,878 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,884 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,893 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,906 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,915 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,920 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,924 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,937 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,944 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,952 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenMediRobots-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,958 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18EF63C' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,967 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18F1BDA' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,976 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,984 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteB-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,989 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,993 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteC-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:36,998 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenVoteA-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,012 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F4D91' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F4D91' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,017 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F4D91' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics3-E0040150B18F4D91' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,026 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,085 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-mmTokenWorkplace-E0040150B18FE9ED' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,137 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,158 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,163 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics1-E0040150B18FAB59' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,181 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,190 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FC8DA' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18FC8DA' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,199 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-suTokenSmartDistricts-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-suTokenSmartDistricts-E0040150B18F4B4B' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,257 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-auTokenTravelBox-E0040150B18EC0E7' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,366 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18FB433' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-skTokenVoteA-E0040150B18FB433' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,429 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics2-E0040150B18F396E' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,507 [ERROR] INSERT : 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 611, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18EE6D5' for key 'scans.scan_UNIQUE_combi'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/scans_to_db.py", line 103, in process_daily_scans
+    cursor.execute(query, values)
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/usr/local/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 619, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '2023-07-17-gtTokenGenetics0-E0040150B18EE6D5' for key 'scans.scan_UNIQUE_combi'
+2023-07-17 18:27:37,519 [INFO] Parsing Token Scans Completed Succesfully!
+2023-07-17 18:27:37,520 [INFO] After today's parsing of scans in DB number of excesive/multiple scans is: 140
+2023-07-17 18:27:37,520 [INFO] Waiting 12 hours until checking time for parsing token scans again...
