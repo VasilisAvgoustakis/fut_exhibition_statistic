@@ -95,7 +95,7 @@ def checkEndTimes():
 
     elif day == 1:
         #logging.info("Schließtag")
-        sub_stop_time = datetime.strptime("09:00:00", "%H:%M:%S").time()# set that back to 9:00
+        sub_stop_time = datetime.strptime("15:00:00", "%H:%M:%S").time()# set that back to 9:00
 
     else:
         #logging.info("Regular day")
