@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 20. Jul 2023 um 15:31
+-- Erstellungszeit: 13. Jul 2023 um 18:06
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -57,10 +57,10 @@ DELIMITER ;
 
 CREATE TABLE `region_times` (
   `date` date NOT NULL,
-  `technology` float NOT NULL,
-  `human` float NOT NULL,
-  `nature` float NOT NULL,
-  `interactive` float NOT NULL
+  `technology` float UNSIGNED NOT NULL,
+  `human` float UNSIGNED NOT NULL,
+  `nature` float UNSIGNED NOT NULL,
+  `interactive` float UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='stores the time in hours spend in each region by all users';
 
 -- --------------------------------------------------------
@@ -77,6 +77,22 @@ CREATE TABLE `scans` (
   `scan_band_code` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Trigger `scans`
+--
+DELIMITER $$
+CREATE TRIGGER `insert_unique_token_stations` BEFORE INSERT ON `scans` FOR EACH ROW BEGIN
+  INSERT INTO token_stations (tk_station_id, installation_date)
+  SELECT NEW.scan_station_id, MIN(scan_date)
+  FROM scans
+  WHERE scan_station_id = NEW.scan_station_id
+  ON DUPLICATE KEY UPDATE
+    tk_station_id = NEW.scan_station_id,
+    installation_date = LEAST(installation_date, MIN(scan_date));
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -86,7 +102,6 @@ CREATE TABLE `scans` (
 CREATE TABLE `token_stations` (
   `token_db_id` int NOT NULL,
   `tk_station_id` varchar(32) NOT NULL,
-  `name_text` varchar(50) DEFAULT NULL,
   `installation_date` date DEFAULT NULL,
   `theme_area` enum('human','technology','nature','gallery') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tk_type` enum('normal','vote','interactive') DEFAULT NULL,
