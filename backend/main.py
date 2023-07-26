@@ -37,6 +37,15 @@ def scan_listener_wrapper():
     except Exception as e:
         gv.logging.exception("EXCEPTION in Scan Listener: ")
 
+def dash_app_server_wrapper():
+    try:
+        with open("./dash_app/app.py", 'r') as dash_app:
+            dash_app_code = dash_app.read()
+        
+        exec(dash_app_code)
+    except Exception as e:
+        gv.logging.exception("EXCEPTION running dash_app.py")
+
 gv.logging.info("Starting Backend...")
 
 gv.logging.info("Recording broker trafic subscribed to: tokenStations/+/onScan") # "+" is a wildcard
@@ -54,14 +63,20 @@ if __name__ == '__main__':
     # Process for processing daily time scans
     process_daily_times = Process(target=times_parser_process_wrapper, args=())
 
+    # Process running the dash_app server
+    dash_app_process = Process(target=dash_app_server_wrapper, args=())
+
     #start the listener
-    #scan_listener_process.start()
+    scan_listener_process.start()
 
     # start the db scan parser
-    parse_daily_scans.start()
+    #parse_daily_scans.start()
     
     # start the db asset parser
     #parse_daily_asset_calls.start()
 
     # start the time processesing
     #process_daily_times.start()
+
+    # start dash_app_server
+    dash_app_process.start()

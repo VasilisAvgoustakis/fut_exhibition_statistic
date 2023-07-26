@@ -1,8 +1,8 @@
-pip~=20.2.1
-setuptools~=49.2.1
-dash~=1.20.0
-plotly~=4.11.0
-numpy~=1.20.3
-pandas~=2.0.2
-paho-mqtt~=1.6.1
-mysql-connector-python~=8.0.33
+pip
+setuptools
+numpy
+pandas
+paho-mqtt
+mysql-connector-python
+dash
+plotly

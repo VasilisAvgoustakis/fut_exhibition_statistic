@@ -18,6 +18,8 @@ services:
     working_dir: /backend
     environment:
       TZ: "Europe/Berlin"
+    ports:
+      - 8050:8050
 
   # mysql server
   mysql-db:
