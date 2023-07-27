@@ -1,0 +1,7 @@
+pip
+setuptools
+numpy
+pandas
+dash
+plotly
+mysql-connector-python
