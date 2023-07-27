@@ -1,0 +1,4 @@
+pip
+setuptools
+paho-mqtt
+mysql-connector-python

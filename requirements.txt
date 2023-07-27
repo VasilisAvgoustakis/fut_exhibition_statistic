@@ -1,8 +1,0 @@
-pip
-setuptools
-numpy
-pandas
-paho-mqtt
-mysql-connector-python
-dash
-plotly

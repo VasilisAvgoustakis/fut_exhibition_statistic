@@ -10,12 +10,25 @@ services:
   # python backend 
   python_backend:
     build:
-      context: .
+      context: ./backend
       dockerfile: Dockerfile
     volumes:
       - ./backend:/backend
       - /etc/localtime:/backend/etc/localtime:ro
     working_dir: /backend
+    environment:
+      TZ: "Europe/Berlin"
+
+
+  # python backend 
+  dash_app:
+    build:
+      context: ./dash_app
+      dockerfile: Dockerfile
+    volumes:
+      - ./dash_app:/dash_app
+      - /etc/localtime:/dash_app/etc/localtime:ro
+    working_dir: /dash_app
     environment:
       TZ: "Europe/Berlin"
     ports:
