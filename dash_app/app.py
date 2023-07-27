@@ -150,57 +150,6 @@ def update_graph(nclick, graph_name):
     return fig
 
 
-#     graphs_path = r"C:\Users\Vasilis Avgoustakis\Desktop\Futurium_Exhibition_Statistics-1.3\html"
-
-#     if value == 'Visitors per day':
-#         url = "http://172.25.11.96/exhibition_visitors_per_day.html"
-#         #path = "/var/www/html/exhibition_visitors_per_day.html"
-#         return url, False, True, True, True
-
-#     if value == 'Average Scans per Station/Month Bar':
-#         url = "http://172.25.11.96/average_tokenScans_perStation_perMonth_bar.html"
-#         path = "/var/www/html/average_tokenScans_perStation_perMonth_bar.html"
-#         return url, False, True, True, True
-
-#     if value == 'Average Scans per Station/Month Pie':
-#         url = "http://172.25.11.96/average_tokenScans_perStation_perMonth_pie.html"
-#         path = "/var/www/html/average_tokenScans_perStation_perMonth_pie.html"
-#         return url, False, True, True, True
-
-#     if value == 'Questions':
-#         url = "http://172.25.11.96/questionsBar_Scans.html"
-#         path = "/var/www/html/questionsBar_Scans.html"
-#         return url, False, True, True, True
-
-#     if value == 'Avg Time/Region':
-#         url = "http://172.25.11.96/Region_Average_TimesperArmband.html"
-#         path = "/var/www/html/Region_Average_TimesperArmband.html"
-#         return url, False, True, True, True
-
-#     if value == 'Region popularity':
-#         url = "http://172.25.11.96/token_popularity_per_region.html"
-#         path = "/var/www/html/token_popularity_per_region.html"
-#         return url, False, True, True, True
-
-#     if value == 'Total Scans per Region':
-#         url = "http://172.25.11.96/token_scans_per_region.html"
-#         path = "/var/www/html/token_scans_per_region.html"
-#         return url, False, True, True, True
-
-#     if value == 'Total Scans per Station Bar':
-#         url = "http://172.25.11.96/total_tokenScans_perStation_bar.html"
-#         path = "/var/www/html/total_tokenScans_perStation_bar.html"
-#         return url, False, True, True, True
-
-#     if value == 'Total Scans per Station Pie':
-#         url = "http://172.25.11.96/total_tokenScans_perStation_pie.html"
-#         path = "/var/www/html/total_tokenScans_perStation_pie.html"
-#         return url, False, True, True, True
-
-#     if value == 'Visitor Paths':
-#         url = "http://172.25.11.96/exhibition_paths.html"
-#         path = "/var/www/html/exhibition_paths.html"
-#         return None, True, False, False, False
 
 
 @app.callback(
