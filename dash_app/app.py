@@ -1,7 +1,7 @@
 import datetime
 from datetime import date
 import dash
-from dash import Dash, html, dcc, callback, Output, Input, State
+from dash import Dash, DiskcacheManager, CeleryManager, html, dcc, callback, Output, Input, State
 from dash.exceptions import PreventUpdate
 import plotly.graph_objs as go
 import plotly.express as px
@@ -13,6 +13,8 @@ import global_variables as gv
 import queries as qrs
 from plotting import plotters
 import importlib
+from operator import imod
+import os
 
 gv.logging.info("%s Dash server process is running...")
 
@@ -75,6 +77,12 @@ except Exception as e:
     gv.logging.exception("Exception while creating cursor from connection to pool %s: %s", pool_name, e)
 
 
+
+# import diskcache
+# cache = diskcache.Cache("./cache")
+# background_callback_manager = DiskcacheManager(cache)
+
+
 # Dash App
 app = Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
@@ -116,7 +124,12 @@ app.layout = html.Div([
     # I frame for all graph types except
     # html.Iframe(id='selected-graph-type',
     #             style={"height": "900px", "width": "100%"}, hidden=True),
-    html.Div(dcc.Graph(id='graph-content', style={"height": "200%", "width": "100%"}))
+    html.Div(
+        id='query-msg-div'
+        ),
+    html.Div(
+        dcc.Graph(id='graph-content', style={"height": "500%", "width": "100%"})
+        )
 ])
 
 
@@ -128,13 +141,24 @@ def fetch_data_from_db(query, date_values):
     return data
 
 @app.callback(
+    [
     Output('graph-content', 'figure'),
+    Output('query-msg-div', 'children'),
+    Output('query-msg-div', 'style')
+    ],
     
-    [Input('submit-dates', 'n_clicks'),
-        Input('dropdown', 'value')]
+    [
+    Input('submit-dates', 'n_clicks'),
+    Input('dropdown', 'value')
+    ],
+    # background=True,
+    # manager=background_callback_manager,
+    # running=[
+    #     (Output("submit-dates", "disabled"), True, False),
+    # ],
 )
 def update_graph(nclick, graph_name):
-
+    # get the index of the selected graph type
     sel_graph_index = graph_types.index(graph_name)
     # get the query with the same list index as the selected graph type
     selected_query = qrs.queries[sel_graph_index]
@@ -142,12 +166,22 @@ def update_graph(nclick, graph_name):
     date_values = qrs.date_strings_sequences[sel_graph_index]
     # fetch the right data
     data = fetch_data_from_db(selected_query, date_values)
-
-    # plot the data using the right 'plotter' function
-    fig = plotters[sel_graph_index](data)
     
-    
-    return fig
+    if data:
+        # plot the data using the right 'plotter' function
+        fig = plotters[sel_graph_index](data)
+        # notify user for sucessfull data query
+        msg = 'Datenabfrage war erfolgreich!'
+        msg_style={'color': 'green', 'font-weight': 'bold',
+                   'text-align': 'center', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    else:
+        # show an empty figure
+        fig = go.Figure()
+        # notify user for unsuccesfull data query
+        msg = 'Kein Daten für selektierte Zeitraum!'
+        msg_style={'color': 'red', 'font-weight': 'bold',
+                   'text-align': 'center', 'display': 'flex', 'justify-content': 'center', 'align-items': 'center'}
+    return fig, msg, msg_style
 
 
 

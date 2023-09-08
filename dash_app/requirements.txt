@@ -3,5 +3,9 @@ setuptools
 numpy
 pandas
 dash
+dash[diskcache]
+dash[celery]
 plotly
 mysql-connector-python
+Celery
+diskcache

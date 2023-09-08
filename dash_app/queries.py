@@ -24,3 +24,4 @@ query_total_scans_tk = "SELECT t.tk_station_id as station, t.theme_area as area,
 queries = [query_total_scans_tk]
 #sequences of date constellatons of different querries
 date_strings_sequences = [(gv.start_date_string, gv.end_date_string, gv.start_date_string, gv.end_date_string)]
+print(gv.start_date_string, gv.end_date_string)

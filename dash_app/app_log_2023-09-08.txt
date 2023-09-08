@@ -1,0 +1,185 @@
+2023-09-08 14:36:31,337 [INFO] %s Dash server process is running...
+2023-09-08 14:36:31,769 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 14:36:31,771 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 14:36:31,786 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 14:36:32,906 [INFO] %s Dash server process is running...
+2023-09-08 14:36:33,145 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 14:36:33,146 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:04:00,891 [INFO] %s Dash server process is running...
+2023-09-08 15:04:01,222 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:04:01,224 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:04:14,028 [INFO] %s Dash server process is running...
+2023-09-08 15:04:14,276 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:04:14,277 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:05:09,486 [INFO] %s Dash server process is running...
+2023-09-08 15:05:09,771 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:05:09,772 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:05:09,787 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 15:05:10,842 [INFO] %s Dash server process is running...
+2023-09-08 15:05:11,085 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:05:11,087 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:42:19,948 [INFO] %s Dash server process is running...
+2023-09-08 15:42:20,197 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:42:20,198 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:43:21,028 [INFO] %s Dash server process is running...
+2023-09-08 15:43:21,271 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:43:21,273 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:44:44,540 [INFO] %s Dash server process is running...
+2023-09-08 15:44:44,783 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:44:44,784 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:45:55,573 [INFO] %s Dash server process is running...
+2023-09-08 15:45:55,810 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:45:55,811 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:45:55,825 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 15:45:56,792 [INFO] %s Dash server process is running...
+2023-09-08 15:45:57,033 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:45:57,036 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:51:43,229 [INFO] %s Dash server process is running...
+2023-09-08 15:51:43,472 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:51:43,473 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:51:56,085 [INFO] %s Dash server process is running...
+2023-09-08 15:51:56,321 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:51:56,322 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:53:19,245 [INFO] %s Dash server process is running...
+2023-09-08 15:53:19,490 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:53:19,491 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:53:19,506 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 15:53:20,444 [INFO] %s Dash server process is running...
+2023-09-08 15:53:20,714 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:53:20,715 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:53:37,986 [INFO] %s Dash server process is running...
+2023-09-08 15:53:38,239 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:53:38,241 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:55:03,858 [INFO] %s Dash server process is running...
+2023-09-08 15:55:04,098 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:55:04,100 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:56:07,777 [INFO] %s Dash server process is running...
+2023-09-08 15:56:08,066 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:56:08,067 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:58:21,068 [INFO] %s Dash server process is running...
+2023-09-08 15:58:21,330 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:58:21,332 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:58:27,505 [INFO] %s Dash server process is running...
+2023-09-08 15:58:27,780 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:58:27,781 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:59:10,370 [INFO] %s Dash server process is running...
+2023-09-08 15:59:10,610 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:59:10,611 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:59:10,627 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 15:59:11,575 [INFO] %s Dash server process is running...
+2023-09-08 15:59:11,817 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:59:11,819 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 15:59:44,165 [INFO] %s Dash server process is running...
+2023-09-08 15:59:44,428 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 15:59:44,429 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:00:31,903 [INFO] %s Dash server process is running...
+2023-09-08 16:00:32,238 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:00:32,239 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:02:35,232 [INFO] %s Dash server process is running...
+2023-09-08 16:02:35,500 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:02:35,501 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:10:55,677 [INFO] %s Dash server process is running...
+2023-09-08 16:10:55,925 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:10:55,926 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:11:10,184 [INFO] %s Dash server process is running...
+2023-09-08 16:11:10,440 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:11:10,442 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:17:16,920 [INFO] %s Dash server process is running...
+2023-09-08 16:17:17,165 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:17:17,166 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:17:17,182 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 16:17:18,174 [INFO] %s Dash server process is running...
+2023-09-08 16:17:18,430 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:17:18,431 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:20:05,818 [INFO] %s Dash server process is running...
+2023-09-08 16:20:06,069 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:20:06,070 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:47:11,136 [INFO] %s Dash server process is running...
+2023-09-08 16:47:11,410 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:47:11,411 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:50:39,410 [INFO] %s Dash server process is running...
+2023-09-08 16:50:39,688 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:50:39,690 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:50:39,953 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 16:50:41,082 [INFO] %s Dash server process is running...
+2023-09-08 16:50:41,353 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:50:41,355 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:53:22,803 [INFO] %s Dash server process is running...
+2023-09-08 16:53:23,087 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:53:23,088 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:53:44,765 [INFO] %s Dash server process is running...
+2023-09-08 16:53:45,066 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:53:45,067 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:58:48,618 [INFO] %s Dash server process is running...
+2023-09-08 16:58:48,892 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:58:48,894 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 16:59:44,619 [INFO] %s Dash server process is running...
+2023-09-08 16:59:44,892 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 16:59:44,893 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:01:55,203 [INFO] %s Dash server process is running...
+2023-09-08 17:01:55,559 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:01:55,560 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:02:47,279 [INFO] %s Dash server process is running...
+2023-09-08 17:02:47,518 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:02:47,519 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:04:30,900 [INFO] %s Dash server process is running...
+2023-09-08 17:04:31,139 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:04:31,140 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:04:31,330 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 17:04:32,391 [INFO] %s Dash server process is running...
+2023-09-08 17:04:32,652 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:04:32,653 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:06:16,923 [INFO] %s Dash server process is running...
+2023-09-08 17:06:17,190 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:06:17,191 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:06:53,906 [INFO] %s Dash server process is running...
+2023-09-08 17:06:54,154 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:06:54,155 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:07:01,682 [INFO] %s Dash server process is running...
+2023-09-08 17:07:01,926 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:07:01,927 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:10:47,725 [INFO] %s Dash server process is running...
+2023-09-08 17:10:47,987 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:10:47,988 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:11:56,592 [INFO] %s Dash server process is running...
+2023-09-08 17:11:56,841 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:11:56,842 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:13:05,756 [INFO] %s Dash server process is running...
+2023-09-08 17:13:06,028 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:13:06,030 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:13:32,645 [INFO] %s Dash server process is running...
+2023-09-08 17:13:32,898 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:13:32,899 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:14:16,263 [INFO] %s Dash server process is running...
+2023-09-08 17:14:16,509 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:14:16,511 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:14:16,680 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 17:14:17,644 [INFO] %s Dash server process is running...
+2023-09-08 17:14:17,884 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:14:17,885 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:18:57,302 [INFO] %s Dash server process is running...
+2023-09-08 17:18:57,564 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:18:57,565 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:19:26,566 [INFO] %s Dash server process is running...
+2023-09-08 17:19:26,837 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:19:26,838 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:19:27,025 [INFO] Dash is running on http://0.0.0.0:8050/
+
+2023-09-08 17:19:28,012 [INFO] %s Dash server process is running...
+2023-09-08 17:19:28,263 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:19:28,265 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:20:05,922 [INFO] %s Dash server process is running...
+2023-09-08 17:20:06,187 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:20:06,188 [INFO] Succesfully connected to MySQL Server: 8.0.33
+2023-09-08 17:21:33,249 [INFO] %s Dash server process is running...
+2023-09-08 17:21:33,493 [INFO] Succesfully connected to DB using Pool: db_pool_dash_app
+2023-09-08 17:21:33,494 [INFO] Succesfully connected to MySQL Server: 8.0.33
