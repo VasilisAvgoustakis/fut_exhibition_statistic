@@ -69,7 +69,7 @@ try:
         gv.logging.info("Succesfully connected to MySQL Server: %s", db_Info)
         
         # Create a cursor object to interact with the database
-        cursor = connection.cursor()               
+        cursor = connection.cursor(buffered=True)               
 except ValueError as e:
     gv.logging.error("Error occurred while creating cursor from connection to pool %s: %s", pool_name, e)
 except Exception as e:
@@ -107,8 +107,9 @@ app.layout = html.Div([
                 max_date_allowed=gv.yesterday,
                 initial_visible_month=date.today(),
                 display_format="DD.MM.YYYY",
-                updatemode='bothdates',
-                clearable= True
+                updatemode='singledate',
+                clearable= True,
+                
                 ),
 
     html.Div(id='output-container-date-picker-range'),
@@ -134,10 +135,14 @@ app.layout = html.Div([
 
 
 # functions gets the right query text when user selects the corresponding graph type from the dropdown
-def fetch_data_from_db(query, date_values):
-    
-    cursor.execute(query, date_values)
+def fetch_data_from_db(query):
+    #print("dates: " + str(date_values))
+    #print("Query: " +  query)
+    cursor.execute("SET @startDate := %(start_date)s;", {'start_date':gv.start_date_string})
+    cursor.execute("SET @endDate := %(end_date)s;", {'end_date':gv.end_date_string})
+    cursor.execute(query)
     data = cursor.fetchall()
+    print(data)
     return data
 
 @app.callback(
@@ -162,10 +167,11 @@ def update_graph(nclick, graph_name):
     sel_graph_index = graph_types.index(graph_name)
     # get the query with the same list index as the selected graph type
     selected_query = qrs.queries[sel_graph_index]
-    #get the right date values sequences for the query
-    date_values = qrs.date_strings_sequences[sel_graph_index]
-    # fetch the right data
-    data = fetch_data_from_db(selected_query, date_values)
+    
+    # fetch the right data only 
+    data = fetch_data_from_db(selected_query)
+    #print(data)
+    
     
     if data:
         # plot the data using the right 'plotter' function
@@ -191,10 +197,11 @@ def update_graph(nclick, graph_name):
     [Input('my-date-picker-range', 'start_date'),
      Input('my-date-picker-range', 'end_date')]
 )
-def update_output_date_picker(start_date=gv.start_date_string, end_date=gv.end_date_string):
+def update_output_date_picker(start_date, end_date):
 
     string_prefix = 'You have selected: '
     #print(start_date)
+    
     if start_date is not None:
         start_date_object = date.fromisoformat(start_date)
         #update global variable start date
@@ -217,11 +224,15 @@ def update_output_date_picker(start_date=gv.start_date_string, end_date=gv.end_d
         
         gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')  
 
-    # Reload the queries module to reflect the changes in other modules
-    importlib.reload(qrs)      
+        # Reload the queries module to reflect the changes in other modules
+        importlib.reload(qrs)      
 
     if len(string_prefix) == len('You have selected: '):
-        return 'Select a date to see it displayed here'
+        if start_date is not None and end_date is not None and \
+        date.fromisoformat(start_date) < date.fromisoformat(end_date):
+            return 'Select a date to see it displayed here'
+        else:
+            return 'Anfangsdatum kann nicht größer als Enddatum sein!!!'
     else:
         return string_prefix
     
