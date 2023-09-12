@@ -35,5 +35,36 @@ def plot_total_scans_tk(data):
 
     return fig
 
+def plot_avg_scans(data):
+    df = pd.DataFrame(data)
+    df.columns = ['Token Station', 'Area', 'Average Scans pro Monat', 'Archived']
 
-plotters =[plot_total_scans_tk] #test
+    df_human = df[(df['Area'] == 'human') &
+                  (df['Archived'].isna())]
+    df_tech = df[(df['Area'] == 'technology') &
+                  (df['Archived'].isna())]
+    df_nature = df[(df['Area'] == 'nature') &
+                   (df['Archived'].isna())]
+    df_interactive = df[(df['Area'] == 'interactive') &
+                     (df['Token Station'] != 'gtTokenGenetics0') &
+                     (df['Archived'].isna())]
+    df_archived_human = df[(df['Archived'].notna()) & (df['Area'] == 'human')]
+    df_archived_tech = df[(df['Archived'].notna()) & (df['Area'] == 'technology')]
+    df_archived_nature = df[(df['Archived'].notna()) & (df['Area'] == 'nature')]
+    df_archived_interactive = df[(df['Archived'].notna()) & (df['Area'] == 'interactive')]
+
+    fig = go.Figure(data=[
+        go.Bar(name='Mensch', x=df_human['Token Station'], y=df_human['Average Scans pro Monat']),
+        go.Bar(name='Technik', x=df_tech['Token Station'], y=df_tech['Average Scans pro Monat']),
+        go.Bar(name='Natur', x=df_nature['Token Station'], y=df_nature['Average Scans pro Monat']),
+        go.Bar(name='Interaktiv', x=df_interactive['Token Station'], y=df_interactive['Average Scans pro Monat']),
+        go.Bar(name='Archived Human', x=df_archived_human['Token Station'], y=df_archived_human['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Technik', x=df_archived_tech['Token Station'], y=df_archived_tech['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Natur', x=df_archived_nature['Token Station'], y=df_archived_nature['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Interaktiv', x=df_archived_interactive['Token Station'], y=df_archived_interactive['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
+    ]
+    )
+
+    return fig
+
+plotters =[plot_total_scans_tk, plot_avg_scans] #test

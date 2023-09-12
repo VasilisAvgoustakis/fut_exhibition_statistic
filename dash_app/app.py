@@ -88,7 +88,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
 
 # List containing tha categories of graphs that can be displayed by the app
-graph_types = ['Gesamtscans pro Token-Station (ALLE)']
+graph_types = ['Gesamtscans pro Token-Station (ALLE)', 'Durchschnittliche Scans pro Token-Station (ALLE)']
 # var contains min and max default dates
 gv.start_date_string = '2020-09-23'
 gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')
@@ -107,30 +107,23 @@ app.layout = html.Div([
                 max_date_allowed=gv.yesterday,
                 initial_visible_month=date.today(),
                 display_format="DD.MM.YYYY",
+                start_date_placeholder_text='23.09.2020',
+                end_date_placeholder_text='11.09.2023',
                 updatemode='singledate',
                 clearable= True,
-                
                 ),
-
     html.Div(id='output-container-date-picker-range'),
-    # dcc.Slider(
-    #     id='slider',
-    #     min=0,
-    #     step=1,
-    #     value=0,
-    #     updatemode='mouseup'
-    # ),
-    # html.Div(id='slider-output-container'),
-    html.Button('submit', id='submit-dates', n_clicks=0 ),
-    # I frame for all graph types except
-    # html.Iframe(id='selected-graph-type',
-    #             style={"height": "900px", "width": "100%"}, hidden=True),
+    html.Button('submit', id='submit-dates', n_clicks=0),
     html.Div(
         id='query-msg-div'
         ),
     html.Div(
-        dcc.Graph(id='graph-content', style={"height": "500%", "width": "100%"})
+        dcc.Loading(
+            id='loading-spinner',
+            children= [dcc.Graph(id='graph-content', style={"height": "500%", "width": "100%"})],
+            type='circle'
         )
+    )
 ])
 
 
@@ -142,7 +135,6 @@ def fetch_data_from_db(query):
     cursor.execute("SET @endDate := %(end_date)s;", {'end_date':gv.end_date_string})
     cursor.execute(query)
     data = cursor.fetchall()
-    print(data)
     return data
 
 @app.callback(
@@ -193,14 +185,18 @@ def update_graph(nclick, graph_name):
 
 
 @app.callback(
-    Output('output-container-date-picker-range', 'children'),
+    
+    Output('output-container-date-picker-range', 'children')
+    ,
     [Input('my-date-picker-range', 'start_date'),
-     Input('my-date-picker-range', 'end_date')]
+     Input('my-date-picker-range', 'end_date'),
+     Input('submit-dates', 'n_clicks')
+     ]
 )
-def update_output_date_picker(start_date, end_date):
+def update_output_date_picker(start_date, end_date, n_clicks):
 
     string_prefix = 'You have selected: '
-    #print(start_date)
+    
     
     if start_date is not None:
         start_date_object = date.fromisoformat(start_date)
@@ -224,29 +220,29 @@ def update_output_date_picker(start_date, end_date):
         
         gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')  
 
-        # Reload the queries module to reflect the changes in other modules
-        importlib.reload(qrs)      
+    # Reload the queries module to reflect the changes in other modules
+    importlib.reload(qrs)    
+    valid_daterange = toggle_btn_activation_for_valid_daterange(gv.start_date_string, gv.end_date_string)  
+    print(valid_daterange)
+
 
     if len(string_prefix) == len('You have selected: '):
-        if start_date is not None and end_date is not None and \
-        date.fromisoformat(start_date) < date.fromisoformat(end_date):
-            return 'Select a date to see it displayed here'
+        if start_date is None and end_date is None:
+            return 'Selektiere ein Zeitraum für ein gezielte Datenabfrage!'
+        elif valid_daterange:
+            return string_prefix
         else:
             return 'Anfangsdatum kann nicht größer als Enddatum sein!!!'
     else:
         return string_prefix
     
 
-
-#     data_lists = ast.literal_eval(data_str)
-#     default_fig = go.Figure()
-#     if len(data_lists) > 2 :
-#         path_fig = graph_path.graph_path(data_lists[0][value], data_lists[1][value], data_lists[2][value])
-#         return 'You are currently seeing visitor "{}"'.format(value), path_fig
-#     elif len(data_lists) == 0:
-#         return "No Data found!", default_fig
-
-#     return 'Slider is disabled', default_fig
+def toggle_btn_activation_for_valid_daterange(start_date, end_date):
+    btn_style = {'color': 'grey', 'background_color': 'grey'}
+    btn_disbl = False
+    if date.fromisoformat(gv.start_date_string) > date.fromisoformat(gv.end_date_string) :
+        return False
+    else: return True
 
 
 if __name__ == '__main__':
