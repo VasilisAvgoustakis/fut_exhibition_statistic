@@ -37,7 +37,7 @@ def plot_total_scans_tk(data):
 
 def plot_avg_scans(data):
     df = pd.DataFrame(data)
-    df.columns = ['Token Station', 'Area', 'Average Scans pro Monat', 'Archived']
+    df.columns = ['Token Station', 'Area', 'Scans', 'From', 'Up to', 'Months passed', 'Archived', 'Average per Month']
 
     df_human = df[(df['Area'] == 'human') &
                   (df['Archived'].isna())]
@@ -53,15 +53,18 @@ def plot_avg_scans(data):
     df_archived_nature = df[(df['Archived'].notna()) & (df['Area'] == 'nature')]
     df_archived_interactive = df[(df['Archived'].notna()) & (df['Area'] == 'interactive')]
 
+    x_axis = 'Token Station'
+    y_axis = 'Average per Month'
+
     fig = go.Figure(data=[
-        go.Bar(name='Mensch', x=df_human['Token Station'], y=df_human['Average Scans pro Monat']),
-        go.Bar(name='Technik', x=df_tech['Token Station'], y=df_tech['Average Scans pro Monat']),
-        go.Bar(name='Natur', x=df_nature['Token Station'], y=df_nature['Average Scans pro Monat']),
-        go.Bar(name='Interaktiv', x=df_interactive['Token Station'], y=df_interactive['Average Scans pro Monat']),
-        go.Bar(name='Archived Human', x=df_archived_human['Token Station'], y=df_archived_human['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
-        go.Bar(name='Archived Technik', x=df_archived_tech['Token Station'], y=df_archived_tech['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
-        go.Bar(name='Archived Natur', x=df_archived_nature['Token Station'], y=df_archived_nature['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
-        go.Bar(name='Archived Interaktiv', x=df_archived_interactive['Token Station'], y=df_archived_interactive['Average Scans pro Monat'], text='Archiviert', textposition='auto'),
+        go.Bar(name='Mensch', x=df_human[x_axis], y=df_human[y_axis]),
+        go.Bar(name='Technik', x=df_tech[x_axis], y=df_tech[y_axis]),
+        go.Bar(name='Natur', x=df_nature[x_axis], y=df_nature[y_axis]),
+        go.Bar(name='Interaktiv', x=df_interactive[x_axis], y=df_interactive[y_axis]),
+        go.Bar(name='Archived Human', x=df_archived_human[x_axis], y=df_archived_human[y_axis], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Technik', x=df_archived_tech[x_axis], y=df_archived_tech[y_axis], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Natur', x=df_archived_nature[x_axis], y=df_archived_nature[y_axis], text='Archiviert', textposition='auto'),
+        go.Bar(name='Archived Interaktiv', x=df_archived_interactive[x_axis], y=df_archived_interactive[y_axis], text='Archiviert', textposition='auto'),
     ]
     )
 
