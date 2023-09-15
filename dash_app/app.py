@@ -15,6 +15,7 @@ from plotting import plotters
 import importlib
 from operator import imod
 import os
+from flask import Flask, request 
 
 gv.logging.info("%s Dash server process is running...")
 
@@ -78,15 +79,20 @@ except Exception as e:
 
 
 
-# import diskcache
-# cache = diskcache.Cache("./cache")
-# background_callback_manager = DiskcacheManager(cache)
+# Create a Flask app
+server = Flask(__name__)
+
+# Dictionary to store Dash app instances for each client
+client_apps = {}
+
+
 
 
 # Dash App
-app = Dash(__name__, external_stylesheets=external_stylesheets)
+app = Dash(__name__, external_stylesheets=external_stylesheets, server=True,  title='Exhibition Statistik')
 server = app.server
-
+#app.enable_pages
+#server = app.init_app(server)
 # List containing tha categories of graphs that can be displayed by the app
 graph_types = ['Gesamtscans pro Token-Station (ALLE)', 'Durchschnittliche Scans pro Token-Station (ALLE)']
 # var contains min and max default dates
@@ -95,6 +101,7 @@ gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')
 
 
 app.layout = html.Div([
+    
     html.H2('Ausstellung Statistik'),
     dcc.Dropdown(
         id='dropdown',
@@ -125,6 +132,7 @@ app.layout = html.Div([
         )
     )
 ])
+
 
 
 # functions gets the right query text when user selects the corresponding graph type from the dropdown
@@ -159,7 +167,6 @@ def update_graph(nclick, graph_name):
     sel_graph_index = graph_types.index(graph_name)
     # get the query with the same list index as the selected graph type
     selected_query = qrs.queries[sel_graph_index]
-    
     # fetch the right data only 
     data = fetch_data_from_db(selected_query)
     #print(data)
@@ -223,7 +230,7 @@ def update_output_date_picker(start_date, end_date, n_clicks):
     # Reload the queries module to reflect the changes in other modules
     importlib.reload(qrs)    
     valid_daterange = toggle_btn_activation_for_valid_daterange(gv.start_date_string, gv.end_date_string)  
-    print(valid_daterange)
+    
 
 
     if len(string_prefix) == len('You have selected: '):
@@ -246,4 +253,5 @@ def toggle_btn_activation_for_valid_daterange(start_date, end_date):
 
 
 if __name__ == '__main__':
+   
     app.run_server(debug=True, host='0.0.0.0', port=8050)

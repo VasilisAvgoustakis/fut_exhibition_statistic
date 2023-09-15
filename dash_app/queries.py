@@ -92,6 +92,7 @@ FROM (SELECT t.tk_station_id AS station, \
         JOIN scans s ON t.tk_station_id = s.scan_station_id \
         WHERE t.tk_type != 'vote' \
         AND t.tk_type = 'interactive' \
+        AND t.theme_area != 'gallery' \
         AND s.scan_date >= @startDate \
         AND s.scan_date <= @endDate \
         GROUP BY t.tk_station_id \

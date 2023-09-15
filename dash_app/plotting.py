@@ -55,6 +55,7 @@ def plot_avg_scans(data):
 
     x_axis = 'Token Station'
     y_axis = 'Average per Month'
+    archived_date = 'Up to'
 
     fig = go.Figure(data=[
         go.Bar(name='Mensch', x=df_human[x_axis], y=df_human[y_axis]),
