@@ -21,14 +21,14 @@ services:
 
 
   # python backend 
-  dash_app:
+  flask_dash_app:
     build:
-      context: ./dash_app
+      context: ./flask_dash_app
       dockerfile: Dockerfile
     volumes:
-      - ./dash_app:/dash_app
+      - ./flask_dash_app:/flask_dash_app
       - /etc/localtime:/dash_app/etc/localtime:ro
-    working_dir: /dash_app
+    working_dir: /flask_dash_app
     environment:
       TZ: "Europe/Berlin"
     ports:
