@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./flask_dash_app:/flask_dash_app
-      - /etc/localtime:/dash_app/etc/localtime:ro
+      - /etc/localtime:/flask_dash_app/etc/localtime:ro
     working_dir: /flask_dash_app
     environment:
       TZ: "Europe/Berlin"
