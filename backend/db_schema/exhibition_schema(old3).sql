@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 07. Jul 2023 um 13:38
+-- Erstellungszeit: 20. Jul 2023 um 15:31
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -52,6 +52,20 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `region_times`
+--
+
+CREATE TABLE `region_times` (
+  `date` date NOT NULL,
+  `technology` float NOT NULL,
+  `human` float NOT NULL,
+  `nature` float NOT NULL,
+  `interactive` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='stores the time in hours spend in each region by all users';
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `scans`
 --
 
@@ -63,18 +77,6 @@ CREATE TABLE `scans` (
   `scan_band_code` varchar(24) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---
--- Trigger `scans`
---
-DELIMITER $$
-CREATE TRIGGER `insert_unique_token_stations` BEFORE INSERT ON `scans` FOR EACH ROW BEGIN
-  INSERT INTO token_stations (tk_station_id)
-  VALUES (NEW.scan_station_id)
-  ON DUPLICATE KEY UPDATE tk_station_id = NEW.scan_station_id;
-END
-$$
-DELIMITER ;
-
 -- --------------------------------------------------------
 
 --
@@ -84,10 +86,14 @@ DELIMITER ;
 CREATE TABLE `token_stations` (
   `token_db_id` int NOT NULL,
   `tk_station_id` varchar(32) NOT NULL,
-  `theme_area` enum('human','tech','natur') DEFAULT NULL,
+  `name_text` varchar(50) DEFAULT NULL,
+  `installation_date` date DEFAULT NULL,
+  `theme_area` enum('human','technology','nature','gallery') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `tk_type` enum('normal','vote','interactive') DEFAULT NULL,
+  `decomissioned` date DEFAULT NULL,
   `x_coord` float DEFAULT NULL,
-  `y_coord` float DEFAULT NULL
+  `y_coord` float DEFAULT NULL,
+  `month_offset` int DEFAULT ((case when (`installation_date` < _utf8mb4'2021-05-21') then 6 else 0 end))
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -114,6 +120,12 @@ CREATE TABLE `video_players` (
 ALTER TABLE `asset_calls`
   ADD PRIMARY KEY (`call_id`),
   ADD UNIQUE KEY `unique_index_per_minute` (`call_date`,`call_time`,`device_ip`);
+
+--
+-- Indizes für die Tabelle `region_times`
+--
+ALTER TABLE `region_times`
+  ADD PRIMARY KEY (`date`);
 
 --
 -- Indizes für die Tabelle `scans`
