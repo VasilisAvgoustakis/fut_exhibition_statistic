@@ -4,7 +4,7 @@ import global_variables as gv #contains all global variables and file paths
 from datetime import datetime
 import time
 import paho.mqtt.subscribe as sub
-import scans_to_db, assets_to_db, process_times
+import scans_to_db, assets_to_db
 
 
 def times_parser_process_wrapper():
@@ -50,16 +50,16 @@ if __name__ == '__main__':
     parse_daily_scans = Process(target=scan_parser_process_wrapper, args=())
 
     # process for storing daily asset calls in DB at end of each day
-    parse_daily_asset_calls = Process(target=asset_parser_process_wrapper, args=())
+    #parse_daily_asset_calls = Process(target=asset_parser_process_wrapper, args=())
 
     # Process for processing daily time scans
-    process_daily_times = Process(target=times_parser_process_wrapper, args=())
+    #process_daily_times = Process(target=times_parser_process_wrapper, args=())
 
     #start the listener
     #scan_listener_process.start()
 
     # start the db scan parser
-    #parse_daily_scans.start()
+    parse_daily_scans.start()
     
     # start the db asset parser
     #parse_daily_asset_calls.start()

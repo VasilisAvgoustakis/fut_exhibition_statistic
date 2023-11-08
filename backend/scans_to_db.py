@@ -79,8 +79,10 @@ def process_daily_scans():
             gv.logging.info("Parsing daily scans to DB...")
 
             # Open the token log file for reading
-            file = open(gv.daily_scans_file, "r")
+            file = open(gv.daily_scans_file, "r+")
             lines = file.readlines()
+
+            
 
             for line in lines:
                 try:
@@ -95,12 +97,15 @@ def process_daily_scans():
                 except Exception as e:
                     gv.logging.exception("Exception at Scan string processing!")
                 try:
-                    #Construct the SQL query to insert the values into the "scans" table
-                    query = "INSERT INTO scans (scan_date, scan_time, scan_station_id, scan_band_code) VALUES (%s, %s, %s, %s)"
-                    values = (scan_date, scan_time, station_id, band_code)
-                    print(query)
-                    #Execute the SQL query
-                    cursor.execute(query, values)
+                    if gv.is_valid_armband_code(band_code):
+                        #Construct the SQL query to insert the values into the "scans" table
+                        query = "INSERT INTO scans (scan_date, scan_time, scan_station_id, scan_band_code) VALUES (%s, %s, %s, %s)"
+                        values = (scan_date, scan_time, station_id, band_code)
+                        print(query)
+                        #Execute the SQL query
+                        cursor.execute(query, values)
+                    else:
+                        raise Exception("Invalid Armband code format!")
                 except Exception as e:
                     multiple_scan_combi_counter += 1
                     gv.logging.exception("INSERT : ")
@@ -112,10 +117,10 @@ def process_daily_scans():
                     #Log or handle the exception
                     gv.logging.exception("Exception while commiting to DB: ")
 
-            # Move the file pointer to the end of the file
-            #file.seek(0, 2)
+            # Move the file pointer to the start of the file
+            file.seek(0)
             # empty daily scans file
-            #file.truncate(0)
+            file.truncate(0)
             #close file
             file.close()  
             

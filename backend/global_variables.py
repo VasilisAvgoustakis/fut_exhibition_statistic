@@ -3,6 +3,7 @@ import logging
 import os
 from mysql.connector import pooling
 from mysql.connector import Error
+import re
 
 
 # Get the current date and time
@@ -12,7 +13,7 @@ current_datetime = datetime.now()
 date_string = current_datetime.strftime("%Y-%m-%d")
 
 # Append the formatted date to the log file name
-log_file_name = f"./backend_log_{date_string}.txt"
+log_file_name = f"./logs/backend_log_{date_string}.txt"
 
 
 # basic loggin configuration
@@ -67,3 +68,9 @@ def format_date_for_db(date_de):
 
     
     return date_db_formatted
+
+# set pattern for armband code
+pattern = re.compile(r'^[A-Z0-9]{16}$')
+
+def is_valid_armband_code(s):
+    return bool(pattern.match(s))
