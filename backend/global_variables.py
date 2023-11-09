@@ -46,11 +46,11 @@ def checkEndTimes():
     if day == 3 :
         #logging.info("Thursday")
 
-        sub_stop_time = datetime.strptime("19:00:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
+        sub_stop_time = datetime.strptime("14:27:00", "%H:%M:%S").time() # count asset recalls from this time onward ...set later at 19:59
 
     elif day == 1:
         #logging.info("Schließtag")
-        sub_stop_time = datetime.strptime("15:00:00", "%H:%M:%S").time()# set that back to 9:00
+        sub_stop_time = datetime.strptime("09:00:00", "%H:%M:%S").time()# set that back to 9:00
 
     else:
         #logging.info("Regular day")

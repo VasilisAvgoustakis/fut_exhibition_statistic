@@ -108,7 +108,7 @@ def process_daily_scans():
                         raise Exception("Invalid Armband code format!")
                 except Exception as e:
                     multiple_scan_combi_counter += 1
-                    gv.logging.exception("INSERT : ")
+                    #gv.logging.exception("INSERT : ")
                 
                 try: 
                     #Commit the changes to the database
