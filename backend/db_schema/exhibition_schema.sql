@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql-db
--- Erstellungszeit: 08. Nov 2023 um 19:15
+-- Erstellungszeit: 11. Dez 2023 um 14:40
 -- Server-Version: 8.0.33
 -- PHP-Version: 8.1.17
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `futurium_exhibition_stats`
 --
+CREATE DATABASE IF NOT EXISTS `futurium_exhibition_stats` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+USE `futurium_exhibition_stats`;
 
 -- --------------------------------------------------------
 
