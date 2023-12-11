@@ -47,9 +47,9 @@ services:
       - 3308:3308
     restart: unless-stopped
     volumes:
-      - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql
-     # - /home/vasilis/fsx_app/db/config:/etc/mysql/conf.d
-     # - /home/vasilis/fsx_app/db/data:/var/lib/mysql
+      #- ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql
+      - /home/administrator/db/config:/etc/mysql/conf.d
+      - /home/administrator/db/data:/var/lib/mysql
 
   phpmyadmin:
     depends_on:
