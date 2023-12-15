@@ -52,11 +52,8 @@ if __name__ == '__main__':
     # process for storing daily asset calls in DB at end of each day
     #parse_daily_asset_calls = Process(target=asset_parser_process_wrapper, args=())
 
-    # Process for processing daily time scans
-    #process_daily_times = Process(target=times_parser_process_wrapper, args=())
-
     #start the listener
-    scan_listener_process.start()
+    #scan_listener_process.start()
 
     # start the db scan parser
     parse_daily_scans.start()
