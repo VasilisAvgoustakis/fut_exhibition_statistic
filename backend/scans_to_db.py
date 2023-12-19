@@ -79,8 +79,8 @@ def process_daily_scans():
             gv.logging.info("Parsing daily scans to DB...")
 
             # Open the token log file for reading
-            #file = open(gv.daily_scans_file, "r+") # uncomment this for daily parsing (normal betrieb)
-            file = open(gv.scans_archive_file, "r+") # only use this when passing data en masse usually when restoring or initiating backups
+            file = open(gv.daily_scans_file, "r+") # uncomment this for daily parsing (normal betrieb)
+            #file = open(gv.scans_archive_file, "r") # only use this when passing data en masse usually when restoring or initiating backups
             lines = file.readlines()
 
             
