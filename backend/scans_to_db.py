@@ -135,6 +135,7 @@ def process_daily_scans():
             gv.logging.info("Parsing Token Scans Completed Succesfully!")
             gv.logging.info("After today's parsing of scans in DB number of excesive/multiple scans is: " + str(multiple_scan_combi_counter))
             gv.logging.info("Waiting 12 hours until checking time for parsing token scans again...")
+            multiple_scan_combi_counter = 0 # set it back to 0
             time.sleep(43200)
         else:
             #gv.logging.info("Check if time to parse (once every Hour)")
