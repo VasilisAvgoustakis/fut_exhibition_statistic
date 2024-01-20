@@ -1,8 +1,7 @@
-backend/network_traffic_archives/token_archive_log.txt
-backend/network_traffic_archives/token_daily_log.txt
-backend/logs/backend_log_2023-12-19.txt
-backend/logs/backend_log_2023-12-19.txt
-backend/logs/backend_log_2023-12-19.txt
-backend/network_traffic_archives/token_archive_log.txt
-backend/network_traffic_archives/token_archive_log.txt
-backend/logs/backend_log_2024-01-16.txt
+/home/administrator/statistics_app/Exhibition_Statistics/backend/logs/
+/home/administrator/statistics_app/Exhibition_Statistics/backend/__pycache__/
+/home/administrator/statistics_app/Exhibition_Statistics/flask_dash_app/__pycache__/
+/home/administrator/statistics_app/Exhibition_Statistics/flask_dash_app/cache/
+/home/administrator/statistics_app/Exhibition_Statistics/flask_dash_app/dashapp/__pycache__/
+/home/administrator/statistics_app/Exhibition_Statistics/flask_dash_app/dashapp/dashapp1/__pycache__/
+/home/administrator/statistics_app/Exhibition_Statistics/flask_dash_app/logs/
