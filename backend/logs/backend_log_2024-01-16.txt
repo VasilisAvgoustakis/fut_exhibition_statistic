@@ -25,3 +25,9 @@
 2024-01-19 18:00:25,061 [INFO] Parsing Token Scans Completed Succesfully!
 2024-01-19 18:00:25,061 [INFO] After today's parsing of scans in DB number of excesive/multiple scans is: 1310
 2024-01-19 18:00:25,061 [INFO] Waiting 12 hours until checking time for parsing token scans again...
+2024-01-20 18:00:20,605 [INFO] Succesfully connected to DB using Pool: db_pool_scans_processing
+2024-01-20 18:00:20,831 [INFO] Succesfully connected to MySQL Server: 8.0.35
+2024-01-20 18:00:20,878 [INFO] Parsing daily scans to DB...
+2024-01-20 18:00:39,312 [INFO] Parsing Token Scans Completed Succesfully!
+2024-01-20 18:00:39,319 [INFO] After today's parsing of scans in DB number of excesive/multiple scans is: 1898
+2024-01-20 18:00:39,319 [INFO] Waiting 12 hours until checking time for parsing token scans again...
