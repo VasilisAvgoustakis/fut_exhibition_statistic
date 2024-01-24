@@ -97,8 +97,8 @@ def process_daily_scans():
                     gv.logging.error("ERROR at Scan string processing!")
                 except Exception as e:
                     gv.logging.exception("Exception at Scan string processing!")
-                try:
-                    if gv.is_valid_armband_code(band_code):
+                try: # added a second time check here to ensure the scan times are withing the given time frames (when parsing scans from older archives)
+                    if gv.is_valid_armband_code(band_code) and datetime.strptime(scan_time, "%H:%M:%S").time() > gv.sub_start_time and datetime.strptime(scan_time, "%H:%M:%S").time() < stop_time:
                         #Construct the SQL query to insert the values into the "scans" table
                         query = "INSERT INTO scans (scan_date, scan_time, scan_station_id, scan_band_code) VALUES (%s, %s, %s, %s)"
                         values = (scan_date, scan_time, station_id, band_code)
