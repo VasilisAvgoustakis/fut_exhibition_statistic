@@ -1,0 +1,192 @@
+2024-01-16 17:30:22,761 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:30:22,761 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:30:22,768 [INFO]  * Restarting with stat
+2024-01-16 17:30:24,797 [WARNING]  * Debugger is active!
+2024-01-16 17:30:24,798 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:31:41,825 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:41] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:31:43,041 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:31:43,043 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:31:43,096 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "GET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1" 200 -
+2024-01-16 17:31:43,105 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:31:43,106 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:31:43,146 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:43] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:31:46,471 [INFO] 172.25.11.200 - - [16/Jan/2024 17:31:46] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:32:18,805 [INFO] 172.25.11.200 - - [16/Jan/2024 17:32:18] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:32:18,957 [INFO] 172.25.11.200 - - [16/Jan/2024 17:32:18] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2024-01-16 17:32:18,981 [INFO] 172.25.11.200 - - [16/Jan/2024 17:32:18] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2024-01-16 17:34:56,630 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:34:56,967 [INFO]  * Restarting with stat
+2024-01-16 17:34:59,821 [WARNING]  * Debugger is active!
+2024-01-16 17:34:59,826 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:35:32,916 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:35:32,993 [INFO]  * Restarting with stat
+2024-01-16 17:35:33,526 [WARNING]  * Debugger is active!
+2024-01-16 17:35:33,526 [INFO]  * Debugger PIN: 473-304-856
+2024-01-16 17:35:52,578 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:35:52,641 [INFO]  * Restarting with stat
+2024-01-16 17:35:53,087 [WARNING]  * Debugger is active!
+2024-01-16 17:35:53,088 [INFO]  * Debugger PIN: 473-304-856
+2024-01-16 17:47:14,653 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:47:14,653 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:47:14,654 [INFO]  * Restarting with stat
+2024-01-16 17:47:15,827 [WARNING]  * Debugger is active!
+2024-01-16 17:47:15,896 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:47:19,152 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:47:19,687 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:47:19,688 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:47:19,736 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-16 17:47:19,743 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:47:19,784 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:47:19,919 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:19] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:47:42,969 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:47:43,096 [INFO]  * Restarting with stat
+2024-01-16 17:47:45,950 [WARNING]  * Debugger is active!
+2024-01-16 17:47:45,950 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:47:46,237 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:46] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:47:54,792 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:54] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:47:55,322 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:47:55,323 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:47:55,382 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-16 17:47:55,389 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:47:55,420 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:47:55,433 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:47:55,493 [INFO] 172.25.11.200 - - [16/Jan/2024 17:47:55] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:48:03,023 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:48:03,028 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:48:03,029 [INFO]  * Restarting with stat
+2024-01-16 17:48:04,956 [WARNING]  * Debugger is active!
+2024-01-16 17:48:04,959 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:48:07,975 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:48:08,197 [INFO]  * Restarting with stat
+2024-01-16 17:48:10,971 [WARNING]  * Debugger is active!
+2024-01-16 17:48:10,975 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:48:23,833 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:48:23,834 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:48:23,834 [INFO]  * Restarting with stat
+2024-01-16 17:48:24,837 [WARNING]  * Debugger is active!
+2024-01-16 17:48:24,838 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:48:53,918 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:48:53,995 [INFO]  * Restarting with stat
+2024-01-16 17:48:54,972 [WARNING]  * Debugger is active!
+2024-01-16 17:48:54,972 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:49:02,742 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:02] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:49:03,320 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:49:03,321 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:49:03,367 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:03,385 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:03,392 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:49:03,476 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:03] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:49:10,499 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:49:10,500 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:49:10,501 [INFO]  * Restarting with stat
+2024-01-16 17:49:12,928 [WARNING]  * Debugger is active!
+2024-01-16 17:49:12,929 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:49:30,981 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-16 17:49:31,068 [INFO]  * Restarting with stat
+2024-01-16 17:49:32,013 [WARNING]  * Debugger is active!
+2024-01-16 17:49:32,014 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:49:39,878 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:39] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:49:40,389 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:49:40,390 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:49:40,436 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:40,442 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:40,476 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:49:40,490 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:40] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:49:47,670 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8050
+ * Running on http://172.18.0.4:8050
+2024-01-16 17:49:47,674 [INFO] [33mPress CTRL+C to quit[0m
+2024-01-16 17:49:47,674 [INFO]  * Restarting with stat
+2024-01-16 17:49:50,111 [WARNING]  * Debugger is active!
+2024-01-16 17:49:50,115 [INFO]  * Debugger PIN: 133-146-699
+2024-01-16 17:49:58,350 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:58] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-16 17:49:59,025 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-16 17:49:59,026 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-16 17:49:59,068 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:59,079 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-16 17:49:59,115 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:49:59,246 [INFO] 172.25.11.200 - - [16/Jan/2024 17:49:59] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:50:27,657 [INFO] 172.25.11.200 - - [16/Jan/2024 17:50:27] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-16 17:50:27,767 [INFO] 172.25.11.200 - - [16/Jan/2024 17:50:27] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2024-01-16 17:50:27,798 [INFO] 172.25.11.200 - - [16/Jan/2024 17:50:27] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2024-01-16 17:50:27,959 [INFO] 172.25.11.200 - - [16/Jan/2024 17:50:27] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:17:58,482 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:58] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-20 15:17:59,234 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-20 15:17:59,235 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-20 15:17:59,294 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-20 15:17:59,306 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-20 15:17:59,400 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:17:59,690 [INFO] 172.25.11.200 - - [20/Jan/2024 15:17:59] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:11,568 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-20 15:18:11,793 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:11,941 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-20 15:18:11,943 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-20 15:18:11,987 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-20 15:18:11,997 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:11] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-20 15:18:12,005 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:12] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:12,203 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:12] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:49,144 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:49] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:58,747 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:58] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:18:58,973 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:58] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2024-01-20 15:18:58,995 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:58] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2024-01-20 15:18:59,207 [INFO] 172.25.11.200 - - [20/Jan/2024 15:18:59] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:07,770 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:07] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-20 15:43:08,927 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:08] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-20 15:43:08,929 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:08] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-20 15:43:08,983 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:08] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1[0m" 304 -
+2024-01-20 15:43:08,990 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:08] "GET /dashboard/_favicon.ico?v=2.14.2 HTTP/1.1" 200 -
+2024-01-20 15:43:08,991 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:08] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1[0m" 304 -
+2024-01-20 15:43:09,096 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:09] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:09,299 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:09] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:18,579 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/ HTTP/1.1" 200 -
+2024-01-20 15:43:18,639 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/deps/react@16.v2_14_2m1702583094.14.0.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,639 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/deps/react-dom@16.v2_14_2m1702583094.14.0.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,639 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/deps/polyfill@7.v2_14_2m1702583094.12.1.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,640 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/deps/prop-types@15.v2_14_2m1702583094.8.1.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,640 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/dash-renderer/build/dash_renderer.v2_14_2m1702583094.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,644 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components.v2_12_1m1702583094.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,662 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/dcc/dash_core_components-shared.v2_12_1m1702583094.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,702 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/html/dash_html_components.v2_0_15m1702583094.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:18,706 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:18] "GET /dashboard/_dash-component-suites/dash/dash_table/bundle.v5_2_8m1702583094.js HTTP/1.1" 200 -
+2024-01-20 15:43:20,375 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "GET /dashboard/_dash-layout HTTP/1.1" 200 -
+2024-01-20 15:43:20,376 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "GET /dashboard/_dash-dependencies HTTP/1.1" 200 -
+2024-01-20 15:43:20,377 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "GET /dashboard/_favicon.ico?v=2.14.2 HTTP/1.1" 200 -
+2024-01-20 15:43:20,404 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "GET /dashboard/_dash-component-suites/dash/dcc/async-dropdown.js HTTP/1.1" 200 -
+2024-01-20 15:43:20,410 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "GET /dashboard/_dash-component-suites/dash/dcc/async-datepicker.js HTTP/1.1" 200 -
+2024-01-20 15:43:20,429 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:20,950 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:20] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:46,841 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:46] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:46,898 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:46] "[36mGET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1[0m" 304 -
+2024-01-20 15:43:46,924 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:46] "[36mGET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1[0m" 304 -
+2024-01-20 15:43:46,969 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:46] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:55,432 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:55] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:43:55,534 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:55] "GET /dashboard/_dash-component-suites/dash/dcc/async-graph.js HTTP/1.1" 200 -
+2024-01-20 15:43:55,547 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:55] "GET /dashboard/_dash-component-suites/plotly/package_data/plotly.min.js HTTP/1.1" 200 -
+2024-01-20 15:43:55,572 [INFO] 172.25.11.200 - - [20/Jan/2024 15:43:55] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-01-20 15:54:47,315 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/layout.py', reloading
+2024-01-20 15:54:50,978 [INFO]  * Restarting with stat
+2024-01-20 15:58:21,209 [INFO]  * Restarting with stat
+2024-01-20 16:09:29,514 [INFO]  * Restarting with stat
+2024-01-20 16:10:13,791 [INFO]  * Restarting with stat
+2024-01-20 16:11:13,472 [INFO]  * Restarting with stat
+2024-01-20 16:11:57,114 [INFO]  * Restarting with stat
+2024-01-20 16:12:12,159 [INFO]  * Restarting with stat
+2024-01-20 16:12:33,243 [INFO]  * Restarting with stat
+2024-01-20 16:12:35,771 [INFO]  * Restarting with stat
+2024-01-20 16:12:48,851 [INFO]  * Restarting with stat
