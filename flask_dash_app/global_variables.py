@@ -20,7 +20,7 @@ date_string = current_datetime.strftime("%Y-%m-%d")
 
 # Append the formatted date to the log file name
 log_file_name = f"./logs/app_log_{date_string}.txt"
-##
+####
 
 # List containing tha categories of graphs that can be displayed by the app
 graph_types = ['Gesamtscans pro Token-Station (ALLE)', 
