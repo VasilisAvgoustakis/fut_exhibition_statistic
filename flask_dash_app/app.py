@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import render_template
-
 # implements a WSGI application and acts as the central object.
 # passed the name of the module or package of the application.
 # act as a central registry for the view functions, the URL rules, template configuration.

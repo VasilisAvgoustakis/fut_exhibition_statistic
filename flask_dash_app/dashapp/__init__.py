@@ -4,6 +4,7 @@ from dashapp.dashapp1.layout import layout as dash_layout
 from .dashapp1.callbacks import register_callbacks
 from .dashapp1.callbacks import init_db_pool
 
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 
@@ -16,7 +17,6 @@ def init_dash(flask_app):
                          title='Ausstellung Statistik'
                          #requests_pathname_prefix='/dashboard/'  # This is crucial. It tells Dash to serve component dependencies from this path.
                          )
-
     
     # add layout to app
     dash_app.layout = dash_layout

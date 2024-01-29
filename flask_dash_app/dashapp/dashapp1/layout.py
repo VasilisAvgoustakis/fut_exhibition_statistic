@@ -1,16 +1,16 @@
 from dash import dash_table
 from dash import dcc
 from dash import html
-
 from datetime import date, datetime, timedelta
 import global_variables as gv
 import urllib
+import importlib
 
-
-
-# var contains min and max default dates
-#gv.start_date_string = '2020-09-23'
-#gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')
+        # to update max date allowed for queries in global vars, called within a callback
+def update_yesterdays_date():
+    today = datetime.now()
+    yesterday = today - timedelta(days=1)
+    return yesterday.date().strftime('%Y-%m-%d')
 
 
 layout = html.Div([
@@ -26,11 +26,11 @@ layout = html.Div([
                     dcc.DatePickerRange(
                                 id='my-date-picker-range',
                                 min_date_allowed=gv.start_date_string,
-                                max_date_allowed=gv.end_date_string,
+                                max_date_allowed=update_yesterdays_date(),
                                 initial_visible_month=date.today(),
                                 display_format="DD.MM.YYYY",
                                 start_date_placeholder_text='23.09.2020',
-                                end_date_placeholder_text=datetime.strptime(gv.end_date_string, '%Y-%m-%d').strftime('%d.%m.%Y'),
+                                end_date_placeholder_text=datetime.strptime(update_yesterdays_date(), '%Y-%m-%d').strftime('%d.%m.%Y'),
                                 updatemode='singledate',
                                 clearable= True,
                                 ),

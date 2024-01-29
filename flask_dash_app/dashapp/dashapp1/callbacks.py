@@ -1,6 +1,5 @@
 from dash.dependencies import Input, Output, State, ALL
 from dash.exceptions import PreventUpdate
-from datetime import date
 import plotly.graph_objs as go
 from mysql.connector import pooling
 import global_variables as gv
@@ -55,13 +54,14 @@ def get_db_cursor(connection):
     finally:
         cursor.close()
 
-def register_callbacks(dashapp):
-    # to update max date allowed for queries in global vars, called within a callback
-    def update_yesterdays_date():
-        today = datetime.now()
-        yesterday = today - timedelta(days=1)
-        gv.end_date_string=yesterday.date().strftime('%Y-%m-%d')
 
+# to update max date allowed for queries in global vars, called within a callback
+def update_yesterdays_date():
+    today = datetime.now()
+    yesterday = today - timedelta(days=1)
+    return yesterday.date().strftime('%Y-%m-%d')
+
+def register_callbacks(dashapp):
 
     # functions gets the right query text when user selects the corresponding graph type from the dropdown
     def fetch_data_from_db(query):
@@ -69,7 +69,7 @@ def register_callbacks(dashapp):
         with get_db_connection() as connection:
             with get_db_cursor(connection) as cursor:
                 cursor.execute("SET @startDate := %(start_date)s;", {'start_date': gv.start_date_string})
-                cursor.execute("SET @endDate := %(end_date)s;", {'end_date': gv.end_date_string})
+                cursor.execute("SET @endDate := %(end_date)s;", {'end_date': update_yesterdays_date()})
             
                 cursor.execute(query)
     
@@ -91,8 +91,8 @@ def register_callbacks(dashapp):
         ]
     )
     def update_graph(nclick, graph_name):
-        # update the max date in global vars
-        update_yesterdays_date()
+
+
 
         # get the context fo the callback to determine what triggered it
         context = callback_context
@@ -397,7 +397,7 @@ def register_callbacks(dashapp):
                                                             row['Corona Offset'],
                                                             row['DB ID']))  # assuming 'id' exists in each row
                 conn.commit()
-            print(style_data_conditional)
+            #print(style_data_conditional)
             return "Data updated successfully!", gv.style_data_conditional # if all goes well return original styles
         
     
