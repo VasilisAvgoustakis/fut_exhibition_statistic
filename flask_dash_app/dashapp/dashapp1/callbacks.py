@@ -78,6 +78,7 @@ def register_callbacks(dashapp):
         return data
 
 
+
     @dashapp.callback(
         [
         Output('loading-spinner', 'children'),
@@ -90,9 +91,7 @@ def register_callbacks(dashapp):
         Input('dropdown', 'value')
         ]
     )
-    def update_graph(nclick, graph_name):
-
-
+    def update_graph(n_clicks, graph_name): 
 
         # get the context fo the callback to determine what triggered it
         context = callback_context
@@ -100,11 +99,28 @@ def register_callbacks(dashapp):
         # get the id of the input component that triggered the callback
         input_id = context.triggered[0]['prop_id'].split('.')[0]
 
-        # if the user selected tha paths graph do nothing / user needs to select dates and press the button
-        if input_id == 'dropdown' \
-            and (graph_name == gv.graph_types[8] \
+        # render empty graph if user changes the dropdown value to signal new graph creation
+        if (input_id == 'dropdown' \
+            or n_clicks == 0) \
+            and \
+            (not graph_name == gv.graph_types[8] \
+            and not graph_name == gv.graph_types[9])  :
+            
+            # show an empty figure
+            fig = go.Figure()
+            # notify user for unsuccesfull data query
+            msg = 'Selektiere eine Zeitraum und drucke Submit!'
+            msg_style={'color': 'orange', 
+                    'font-weight': 'bold', 
+                        'justify-content': 'center'}
+            graph= dcc.Graph(figure=fig, id='graph-content', style={"height": "600px", "width": "100%"})
+
+            return graph, msg, msg_style
+
+        # for path graphs warn user of extensive loading times if long time periods are selected
+        elif input_id == 'dropdown' and \
+            (graph_name == gv.graph_types[8] \
             or graph_name == gv.graph_types[9]):
-            # If the callback was triggered by the dropdown and the value is the one to exclude, do nothing
             return dcc.Markdown(('''
                                 **Bitte selektiere ein Zeitfenstern und drucke "Submit"!**
                                  
@@ -113,7 +129,8 @@ def register_callbacks(dashapp):
                                  _Wenn du z.B. den wahrscheinlichsten Pfad anhand der gesamte Datenlage berechnen willst_
                                  _musst mit ca. 2 Stunden Zeit rechnen!_
                             '''), id='paths-msg'), no_update, no_update
-    
+        
+        # this only executes if the user has used the submit button and updates the graphs
         else:
             # get the index of the selected graph type
             sel_graph_index = gv.graph_types.index(graph_name)
@@ -186,6 +203,10 @@ def register_callbacks(dashapp):
                 graph= dcc.Graph(figure=fig, id='graph-content', style={"height": "600px", "width": "100%"})
 
             return graph, msg, msg_style
+
+
+
+
 
     @dashapp.callback(
         

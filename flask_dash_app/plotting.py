@@ -431,8 +431,8 @@ def plot_probable_path(data):
     # store data for CSV export
     gv.csv_file_data = df
 
-# segregate the data by each unique armband code, sort it by time, 
-# and then count the transitions between stations in the transtion_count dictionary.
+    # segregate the data by each unique armband code, sort it by time, 
+    # and then count the transitions between stations in the transtion_count dictionary.
 
     # Initialize an empty dictionary to hold transition counts
     transition_count = {}
@@ -460,7 +460,7 @@ def plot_probable_path(data):
             
             prev_station = current_station
     
-# calculate the Markov's transition Matrix
+    # calculate the Markov's transition Matrix
     # Create the transition matrix
     stations = df['name'].unique()
     n = len(stations)
@@ -483,7 +483,7 @@ def plot_probable_path(data):
     # divide each element of each row by the corresponding row sum to tranform it to propability
     transition_matrix = transition_matrix / row_sums[:, np.newaxis]
 
-# add the image to the graph & initialize figure
+    # add the image to the graph & initialize figure
     with open(os.getcwd() + "/tokenmap.png", "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode()
 
@@ -511,11 +511,11 @@ def plot_probable_path(data):
     fig.update_xaxes(showgrid=False, range=(0, img_width))
     fig.update_yaxes(showgrid=False, scaleanchor='x', range=(img_height, 0))
 
-# Map station to coordinates
+    # Map station to coordinates
     # Create a dictionary to map station IDs to their x and y coordinates
     coord_dict = {row['name']: (row['x_coord'], row['y_coord']) for _, row in df.drop_duplicates('name').iterrows()}
     #print(coord_dict)
-# Identify the most common "first station" by looking at the start_state for each unique armband code in your dataset. 
+    # Identify the most common "first station" by looking at the start_state for each unique armband code in your dataset. 
     most_common_start = df.groupby('code').first()['name'].value_counts().idxmax()
 
     # Get its index in the 'stations' array
@@ -639,7 +639,7 @@ def derive_random_paths(data):
     df = pd.DataFrame(data)
     df.columns = ['code', 'station', 'name', 'date', 'time', 'x_coord', 'y_coord']
 
-# pick the data for 100 distinct armbands at random, sort it by time, 
+    # pick the data for 100 distinct armbands at random, sort it by time, 
     # create new df for 100 random paths
     columns = ['code', 'station', 'name', 'date', 'time', 'x_coord', 'y_coord']
     random_paths = pd.DataFrame(columns=columns)
@@ -670,7 +670,7 @@ def derive_random_paths(data):
     gv.csv_file_data = random_paths
     
 
-# add the image to the graph & initialize figure
+    # add the image to the graph & initialize figure
     with open(os.getcwd() + "/tokenmap.png", "rb") as image_file:
         encoded_string = base64.b64encode(image_file.read()).decode()
 
@@ -698,7 +698,7 @@ def derive_random_paths(data):
     fig.update_xaxes(showgrid=False, range=(0, img_width))
     fig.update_yaxes(showgrid=False, scaleanchor='x', range=(img_height, 0))
 
-# Map station to coordinates
+    # Map station to coordinates
     # Create a dictionary to map station IDs to their x and y coordinates
     gv.coord_dict = {row['name']: (row['x_coord'], row['y_coord']) for _, row in random_paths.drop_duplicates('name').iterrows()}
 
