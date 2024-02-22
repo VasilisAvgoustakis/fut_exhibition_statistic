@@ -14,7 +14,7 @@ yesterday = date.today() - timedelta(days=1)
 # var contains min and max default dates
 start_date_string = '2020-09-23'
 #end_date_string = yesterday.strftime('%Y-%m-%d')
-#end_date_string = '2020-09-23'
+end_date_string = '2020-09-23'
 
 # Format the date in the desired format
 date_string = current_datetime.strftime("%Y-%m-%d")

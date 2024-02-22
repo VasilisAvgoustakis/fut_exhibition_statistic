@@ -10,9 +10,19 @@ from contextlib import contextmanager
 from dash import dcc, html, callback_context, no_update
 import pandas as pd
 from datetime import date, datetime, timedelta
+import time
+import redis
+import uuid
+import json
 
 # variables
 current_month = date.today().month
+
+# Set up Redis connection
+redis_host = "redis"  # Use the Docker service name as hostname
+redis_port = 6379
+redis_db = redis.Redis(host=redis_host, port=redis_port, db=0, decode_responses=True)
+
 
 # DB code
 
@@ -53,6 +63,16 @@ def get_db_cursor(connection):
     finally:
         cursor.close()
 
+def test_redis_connection(host='redis', port=6379):
+    """Attempt to connect to Redis server and ping."""
+    try:
+        r = redis.Redis(host=host, port=port, db=0)
+        ping_response = r.ping()
+        print(f"Redis ping response: {ping_response}")
+    except Exception as e:
+        print(f"Failed to connect to Redis: {e}")
+
+
 
 # to update max date allowed for queries in global vars, called within a callback
 def update_yesterdays_date():
@@ -61,6 +81,7 @@ def update_yesterdays_date():
     return yesterday.date().strftime('%Y-%m-%d')
 
 def register_callbacks(dashapp):
+    test_redis_connection()
 
     # functions gets the right query text when user selects the corresponding graph type from the dropdown
     def fetch_data_from_db(query):
@@ -68,7 +89,7 @@ def register_callbacks(dashapp):
         with get_db_connection() as connection:
             with get_db_cursor(connection) as cursor:
                 cursor.execute("SET @startDate := %(start_date)s;", {'start_date': gv.start_date_string})
-                cursor.execute("SET @endDate := %(end_date)s;", {'end_date': update_yesterdays_date()})
+                cursor.execute("SET @endDate := %(end_date)s;", {'end_date': gv.end_date_string})
             
                 cursor.execute(query)
     
@@ -76,6 +97,17 @@ def register_callbacks(dashapp):
                 
         return data
 
+    def enqueue_query(query, start_date, end_date):
+        # Generate a unique identifier for this task
+        task_id = f"query-{uuid.uuid4()}"
+        # Package the query and its ID into a dictionary
+        task = {'id': task_id, 'query': query, 'status': 'queued', 
+                'start_date': start_date, 'end_date': end_date }
+        # Convert the task dictionary to a JSON string
+        task_json = json.dumps(task)
+        # Push the task to the Redis list (queue)
+        redis_db.rpush('query_queue', task_json)
+        return task_id
 
 
     @dashapp.callback(
@@ -139,8 +171,39 @@ def register_callbacks(dashapp):
             #print(selected_query)
             # fetch the right data only 
             data = fetch_data_from_db(selected_query)
-            #print("Data: ")
-            #print(data)
+
+
+
+            # # replace the direct fetch from db with enqueu logic
+            # task_id = enqueue_query(selected_query, gv.start_date_string, gv.end_date_string)
+            # print("Task_id: ", task_id)
+            # # check periodically if result data are available in redis
+            # # Initialize result data
+            # data = None
+            # # Poll Redis for the result, with a timeout (for example, 10 seconds)
+            # timeout = 20  # seconds
+            # start_time = time.time()
+            
+
+            # while time.time() - start_time < timeout:
+            #     if redis_db.exists(f"result:{task_id}"):
+            #         # If result exists, break the loop and proceed
+            #         result_json = redis_db.get(f"result:{task_id}")
+            #         print(result_json)
+            #         data = json.loads(result_json)
+            #         break
+            #     else:
+            #         # Sleep for a short time to prevent a tight loop
+            #         time.sleep(0.5)  # Adjust sleep time as needed
+
+            # if not data:
+            #     raise PreventUpdate  # If no data after timeout, prevent update
+
+
+
+
+            # print("Data: ")
+            print(data)
             pie_figs=[]
             
             # for double graphs

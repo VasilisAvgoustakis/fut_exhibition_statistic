@@ -6,3 +6,4 @@ flask_dash_app/dashapp/dashapp1/__pycache__/
 backend/network_traffic_archives/
 backend/network_traffic_archives/token_archive_log.txt
 backend/network_traffic_archives/token_daily_log.txt
+redis/data/dump.rdb
