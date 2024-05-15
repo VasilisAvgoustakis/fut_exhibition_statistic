@@ -2,6 +2,7 @@
 
 This project provides statistical analysis and data visualization for the exhibition held at the Futurium museum in Berlin. It includes backend services for data storing and processing and a web application to display the statistics.
 
+
 ## Architecture
 
 The project is divided into several components:
