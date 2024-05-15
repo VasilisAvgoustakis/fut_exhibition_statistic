@@ -28,7 +28,7 @@ The project is divided into several components:
         - The Flask application is also containerized as part of the `web` service in the `docker-compose` file.
         - `flask_dash_app`: The Fask/Dash app is also containirized in its own service.
 
-3. **Gerelan**:
+3. **General**:
    - **Docker Compose**: The system is orchestrated using Docker Compose, managing dependencies and networking between the various services.
 
 ## Features
