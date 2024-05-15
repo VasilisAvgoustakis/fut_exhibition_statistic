@@ -1351,3 +1351,5 @@
 2024-05-15 13:24:12,674 [INFO] 172.25.12.51 - - [15/May/2024 13:24:12] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
 2024-05-15 13:24:13,939 [INFO] 172.25.12.51 - - [15/May/2024 13:24:13] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
 2024-05-15 13:24:20,141 [INFO] 172.25.12.51 - - [15/May/2024 13:24:20] "POST /dashboard/_dash-update-component HTTP/1.1" 200 -
+2024-05-15 14:47:07,421 [INFO]  * Detected change in '/flask_dash_app/dashapp/dashapp1/callbacks.py', reloading
+2024-05-15 14:47:36,839 [INFO]  * Restarting with stat

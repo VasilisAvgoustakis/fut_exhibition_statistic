@@ -28,7 +28,7 @@ redis_db = redis.Redis(host=redis_host, port=redis_port, db=0, decode_responses=
 
 # DB connection config
 db_connection_pool = None
-# connection to db is implemented as a function called in app init at start of app creation
+# connection to db is implemented as a function called in app init at start of app creation ...
 def init_db_pool():
     global db_connection_pool
     dbconfig = {
