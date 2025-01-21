@@ -5,15 +5,11 @@ from datetime import date, datetime, timedelta
 import global_variables as gv
 import urllib
 import importlib
-
-        # to update max date allowed for queries in global vars, called within a callback
-def update_yesterdays_date():
-    today = datetime.now()
-    yesterday = today - timedelta(days=1)
-    return yesterday.date().strftime('%Y-%m-%d')
+from .callbacks import update_yesterdays_date
 
 
-layout = html.Div([
+def serve_layout():
+    layout = html.Div([
         html.H2('Ausstellung Statistik'),
         dcc.Tabs(id='main-nav-tab', value='tab-1', children=[
             dcc.Tab(id='stats-tab', label='Statistik', value='tab-1',
@@ -107,4 +103,5 @@ layout = html.Div([
                                      ]),
                         ])
                     ])
-])
+    ])
+    return layout
