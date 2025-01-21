@@ -494,8 +494,8 @@ def plot_probable_path(data):
     fig = go.Figure()
 
     # Add image
-    img_width = 2380
-    img_height = 1992
+    img_width = 19008
+    img_height = 13440
     fig.add_layout_image(
         x=0,
         sizex=img_width,
