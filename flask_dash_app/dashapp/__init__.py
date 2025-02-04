@@ -19,7 +19,7 @@ def init_dash(flask_app):
                          )
     
     # add layout to app
-    dash_app.layout = serve_layout()
+    dash_app.layout = serve_layout # Note: Pass the function itself, not the result of the function
     # initiate connection pool to db
     init_db_pool()
     # register callbacks to dash app
