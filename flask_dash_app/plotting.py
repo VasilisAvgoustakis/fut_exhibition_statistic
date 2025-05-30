@@ -363,6 +363,47 @@ def plot_avg_scans_per_visitor(data):
     
     return fig
 
+def plot_scans_per_visitor_percentile(data):
+    df = pd.DataFrame(data)
+    df.columns = ['Bucket', 'Armbandanzahl']
+
+    # store data for CSV export
+    gv.csv_file_data = df
+
+    fig = go.Figure()
+
+    # 1) compute percent of total
+    total = df['Armbandanzahl'].sum()
+    df['Pct'] = df['Armbandanzahl'] / total * 100
+    # format as e.g. "12.3 %"
+    df['PctLabel'] = df['Pct'].map(lambda x: f"{x:.1f}%")
+
+    # 2) build the bar chart with inside text
+    fig = go.Figure(go.Bar(
+        x=df['Bucket'],
+        y=df['Armbandanzahl'],
+        text=df['PctLabel'],         # what to show
+        textposition='inside',       # put it in the middle of the bar
+        textfont=dict(color='white'),
+        marker_line_width=1,
+        marker_line_color='black',
+        opacity=0.8,
+    ))
+
+    # 3) layout tweaks
+    fig.update_layout(
+        title="Distribution von Scans",
+        xaxis_title="Scan Bins",
+        yaxis_title="Armbandnutzer*innen",
+        bargap=0.2,
+        uniformtext_minsize=12,      # make sure text isn't too small
+        uniformtext_mode='hide',     # hide if it won't fit
+    )
+
+    return fig
+
+
+
 def plot_vote_scans_per_question(data):
     df = pd.DataFrame(data)
     df.columns = ['Station', 'Name', 'Total Scans']
@@ -772,6 +813,7 @@ plotters =[plot_total_scans_tk, plot_avg_scans,
            plot_avg_time_per_visitor,
            plot_visitors_per_day,
            plot_avg_scans_per_visitor,
+           plot_scans_per_visitor_percentile,
            plot_vote_scans_per_question,
            plot_probable_path,
            derive_random_paths

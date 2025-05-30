@@ -31,6 +31,7 @@ graph_types = ['Gesamtscans pro Token-Station (ALLE)',
                 'Durchschnittlche Zeit pro Besucher',
                 'Anzahl der Besucher pro Tag',
                 'Durchschnittliche Scans pro Besucher per Region',
+                'Scans per Besucher Quartal',
                 'Token Szenario pro Frage',
                 'Wahrscheinlichste durchschnittliches Pfad',
                 'Zufällige Pfade'
@@ -46,6 +47,7 @@ avg_scans_per_region_per_station_msg = "Gesamtzahl der Scans per Denkraum durch 
 avg_time_per_visitro_msg = "Die Durschnittszeit in Minuten die ein Besucher in den jeweiligen Denkräumen spendet."
 total_visitors_per_day_msg = "Die Gesamtanzahl einzelne Armbänder pro Tag neben der Anzahl der Zukunfsmaschine Einwürfe"
 avg_scans_per_visitor_msg = "Wie viele Scans macht der/die durchschnittliche Besucher*inn in jedem Denkraum und in der Gesamte Ausstellung?"
+scans_per_visitor_percentile = "Wie viele Scans hat jeder Quartal der Armbandnutzer*innen?"
 vote_scans_per_question_msg = "Anzahl der entsprechenden Antwort zu jeder Frage."
 probable_path_msg = "Der Wahrscheinlichste bescuher Pfad anhand alle einzelnen Besucher Pfaden in der ausgewählte Zeitfenster!"
 random_paths_msg = "Der Wahrscheinlichste bescuher Pfad anhand alle einzelnen Besucher Pfaden in der ausgewählte Zeitfenster!"

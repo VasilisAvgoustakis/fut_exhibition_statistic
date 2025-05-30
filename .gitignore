@@ -1,16 +1,12 @@
-backend/__pycache__/
-flask_dash_app/__pycache__/
-flask_dash_app/cache/
-flask_dash_app/dashapp/__pycache__/
-flask_dash_app/dashapp/dashapp1/__pycache__/
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
 backend/network_traffic_archives/
 backend/network_traffic_archives/token_archive_log.txt
 backend/network_traffic_archives/token_daily_log.txt
 redis/data/dump.rdb
-flask_dash_app/dashapp/dashapp1/__pycache__/
-backend/__pycache__/
 backend/logs/
 flask_dash_app/logs/
 Exhibition_Statistics/flask_dash_app/logs
 Exhibition_Statistics/backend/logs
-Exhibition_Statistics/backend/__pycache__

@@ -315,6 +315,38 @@ avg_scans_per_visitor = "SELECT area, \
         GROUP BY scan_date \
     ) AS Total_Visitors_All_Areas) b;"
 
+scans_per_visitor_percentile = "WITH scans_per_code AS (\
+                                SELECT\
+                                    scan_band_code,\
+                                    scan_date,\
+                                    COUNT(*) AS scans\
+                                FROM `scans`\
+                                WHERE scan_date BETWEEN @startDate AND @endDate\
+                                GROUP BY scan_band_code, scan_date\
+                                )\
+                                SELECT\
+                                CASE\
+                                    WHEN scans < 2   THEN '<2 Scans'\
+                                    WHEN scans < 5   THEN '<5 Scans'\
+                                    WHEN scans < 10  THEN '5–9 Scans'\
+                                    WHEN scans < 25  THEN '10–24 Scans'\
+                                    WHEN scans < 45  THEN '25–44 Scans'\
+                                    ELSE               '>=45 Scans'\
+                                END AS bucket,\
+                                COUNT(*) AS num_codes\
+                                FROM scans_per_code\
+                                GROUP BY bucket\
+                                ORDER BY\
+                                CASE bucket\
+                                    WHEN '<2 Scans'   THEN 1\
+                                    WHEN '<5 Scans'   THEN 2\
+                                    WHEN '5–9 Scans'  THEN 3\
+                                    WHEN '10–24 Scans' THEN 4\
+                                    WHEN '25–44 Scans' THEN 5\
+                                    WHEN '>=45 Scans' THEN 6\
+                                END;\
+"
+
 vote_scans_per_question = " \
   SELECT \
     t.tk_station_id AS station, \
@@ -352,6 +384,7 @@ queries = [query_total_scans_tk,
            avg_time_per_visitor,
            total_visitors_per_day,
            avg_scans_per_visitor,
+           scans_per_visitor_percentile,
            vote_scans_per_question,
            visitor_paths, # use the same query for both last graphs containing paths
            visitor_paths
