@@ -1,113 +1,68 @@
+"""
+Callback functions for the Dash application.
+"""
 from dash.dependencies import Input, Output, State, ALL
 from dash.exceptions import PreventUpdate
 import plotly.graph_objs as go
-from mysql.connector import pooling
-import global_variables as gv
-import queries as qrs
-from plotting import plotters
+import config
+from flask_dash_app.queries import QUERIES, TOKEN_STATIONS_TABLE
+from flask_dash_app.plotting import plotters
 import importlib
-from contextlib import contextmanager
 from dash import dcc, html, callback_context, no_update
 import pandas as pd
 from datetime import date, datetime, timedelta
 import time
-import redis
-import uuid
-import json
+from utils import db, redis_client
 
-# variables
+# Set up logging
+logger = config.setup_logging("flask_dash_app")
+
+# Variables
 current_month = date.today().month
 
-# Set up Redis connection
-redis_host = "redis"  # Use the Docker service name as hostname
-redis_port = 6379
-redis_db = redis.Redis(host=redis_host, port=redis_port, db=0, decode_responses=True)
+# CSV data storage
+csv_file_data = pd.DataFrame()
 
+# Coordinate dictionary for path visualization
+coord_dict = {}
 
-# DB code
-
-# DB connection config
-db_connection_pool = None
-# connection to db is implemented as a function called in app init at start of app creation ...
-def init_db_pool():
-    global db_connection_pool
-    dbconfig = {
-        "host": "mysql-db",
-        "user": "regular_user",
-        "port": "3306",
-        "password": "regular_pass",
-        "database": "futurium_exhibition_stats"
-    }
-    db_connection_pool = pooling.MySQLConnectionPool(
-        pool_name="db_pool_dash_app",
-        pool_size=10,
-        pool_reset_session=True,
-        **dbconfig
-    )
-
-
-@contextmanager
-def get_db_connection():
-    connection = db_connection_pool.get_connection()
-    try:
-        yield connection
-    finally:
-        connection.close()
-
-
-@contextmanager
-def get_db_cursor(connection):
-    cursor = connection.cursor(buffered=True)
-    try:
-        yield cursor
-    finally:
-        cursor.close()
-
-def test_redis_connection(host='redis', port=6379):
-    """Attempt to connect to Redis server and ping."""
-    try:
-        r = redis.Redis(host=host, port=port, db=0)
-        ping_response = r.ping()
-        print(f"Redis ping response: {ping_response}")
-    except Exception as e:
-        print(f"Failed to connect to Redis: {e}")
-
-
-
-# to update max date allowed for queries in global vars, called within a callback
+# To update max date allowed for queries in global vars, called within a callback
 def update_yesterdays_date():
+    """
+    Get yesterday's date in YYYY-MM-DD format.
+    
+    Returns:
+        str: Yesterday's date in YYYY-MM-DD format
+    """
     today = datetime.now()
     yesterday = today - timedelta(days=1)
     return yesterday.date().strftime('%Y-%m-%d')
 
 def register_callbacks(dashapp):
-    test_redis_connection()
-
-    # functions gets the right query text when user selects the corresponding graph type from the dropdown
-    def fetch_data_from_db(query):
-        #print(gv.start_date_string, gv.end_date_string)
-        with get_db_connection() as connection:
-            with get_db_cursor(connection) as cursor:
-                cursor.execute("SET @startDate := %(start_date)s;", {'start_date': gv.start_date_string})
-                cursor.execute("SET @endDate := %(end_date)s;", {'end_date': gv.end_date_string})
-            
-                cursor.execute(query)
+    """
+    Register callback functions for the Dash application.
     
-                data = cursor.fetchall()
-                
-        return data
-
-    def enqueue_query(query, start_date, end_date):
-        # Generate a unique identifier for this task
-        task_id = f"query-{uuid.uuid4()}"
-        # Package the query and its ID into a dictionary
-        task = {'id': task_id, 'query': query, 'status': 'queued', 
-                'start_date': start_date, 'end_date': end_date }
-        # Convert the task dictionary to a JSON string
-        task_json = json.dumps(task)
-        # Push the task to the Redis list (queue)
-        redis_db.rpush('query_queue', task_json)
-        return task_id
+    Args:
+        dashapp: Dash application instance
+    """
+    # Test Redis connection
+    redis_client.test_redis_connection()
+    
+    # Current date range for queries
+    start_date = config.STATS_DATE_RANGES["start_date"]
+    end_date = config.STATS_DATE_RANGES["end_date"]
+    
+    def fetch_data_from_db(query):
+        """
+        Fetch data from the database using the specified query.
+        
+        Args:
+            query (str): SQL query to execute
+            
+        Returns:
+            list: Query results
+        """
+        return db.execute_query_with_date_range(query, start_date, end_date)
 
 
     @dashapp.callback(

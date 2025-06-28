@@ -1,39 +1,52 @@
+"""
+MQTT callback functions for handling subscription messages.
+"""
 from datetime import datetime
 import time
-import global_variables as gv
-# import read_token_data
-# import graph_data
-# import graph_time
+import config
+import os
 from multiprocessing import Process
 
+# Set up logging
+logger = config.setup_logging("backend")
 
+# Ensure directories exist for log files
+os.makedirs(os.path.dirname(config.FILE_PATHS["daily_scans_file"]), exist_ok=True)
+os.makedirs(os.path.dirname(config.FILE_PATHS["scans_archive_file"]), exist_ok=True)
 
-# callback function of mqtt sub listener
 def on_scan(client, stop, message):
+    """
+    Callback function for MQTT subscription to handle scan events.
     
-    # get current datetime and time
+    Args:
+        client: MQTT client instance
+        stop: Stop flag
+        message: MQTT message
+    """
+    # Get current datetime and time
     now = datetime.now()
-    currentTime = now.time()
-    stop_time = gv.checkEndTimes()
+    current_time = now.time()
+    stop_time = config.check_end_times()
 
-    #call stop_on_msg_print function to check time and if recording must be paused, put the returned boolean in a variable
-    #stop = stop_on_msg_print()
-    daily_scans_file = open(gv.daily_scans_file, "a")
-    scans_archive_file = open(gv.scans_archive_file, "a")
+    # Open log files
+    daily_scans_file = open(config.FILE_PATHS["daily_scans_file"], "a")
+    scans_archive_file = open(config.FILE_PATHS["scans_archive_file"], "a")
 
-    if currentTime > gv.sub_start_time and currentTime < stop_time:
-        # get current time and date
-        formated_date_time = now.strftime("%d.%m.%Y_%H:%M:%S")
+    if current_time > config.SUB_START_TIME and current_time < stop_time:
+        # Get current time and date
+        formatted_date_time = now.strftime("%d.%m.%Y_%H:%M:%S")
         
-        # write the token scan messages to daily_report file and archive file
-        daily_scans_file.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")
-        scans_archive_file.write(formated_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")  # just for debugging and checking if stats are being counted correctly
-        daily_scans_file.close()
-        scans_archive_file.close()
-
-    else: # log info
-        #gv.logging.info("Scan in invalid Timewindow occured!")
+        # Write the token scan messages to daily_report file and archive file
+        daily_scans_file.write(formatted_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")
+        scans_archive_file.write(formatted_date_time + "__" + ("%s %s" % (message.topic, message.payload)) + "\n")
+    else:
+        # Log info about invalid time window if needed
+        # logger.debug("Scan in invalid time window occurred")
         pass
+    
+    # Close files
+    daily_scans_file.close()
+    scans_archive_file.close()
 
 
     #if stop is True:
