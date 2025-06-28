@@ -2,14 +2,13 @@
 
 This project provides statistical analysis and data visualization for the exhibition held at the Futurium museum in Berlin. It includes backend services for data storing and processing and a web application to display the statistics.
 
-
 ## Architecture
 
 The project is divided into several components:
 
 1. **Backend**:
    - **Python Backend**: 
-        - The backend is built using Python and handles data capturing, pre-processing and storing. It uses mqtt subscribe to gather interactions of visitors that are using their RFID bracelets on different exhibits.
+        - The backend is built using Python and handles data capturing, pre-processing and storing. It uses MQTT subscribe to gather interactions of visitors that are using their RFID bracelets on different exhibits.
         - The visitor interaction with the exhibition are stored in a MySQL DB with which the backend program interacts for storing and retrieving data.
         - Many intensive statistical calculation are done by the database when it is "cheaper" to do so.
    - **Redis**: Used as a message broker for background task processing.
@@ -21,16 +20,16 @@ The project is divided into several components:
      - `mysql-db`: The MySQL DB server
      - `phpmyadmin`: The PHP My Admin Web app for DB management.
 
-
 2. **Web Application**:
    - **Flask**: Serves the main web application and API endpoints.
    - **Dash & Plotly**: Integrate with Flask to provide interactive data visualizations.
    - **Containerization**: 
         - The Flask application is also containerized as part of the `web` service in the `docker-compose` file.
-        - `flask_dash_app`: The Fask/Dash app is also containirized in its own service.
+        - `flask_dash_app`: The Flask/Dash app is also containerized in its own service.
 
 3. **General**:
    - **Docker Compose**: The system is orchestrated using Docker Compose, managing dependencies and networking between the various services.
+   - **Configuration System**: The application uses a centralized configuration system with environment variables and configuration files.
 
 ## Features
 
@@ -38,7 +37,41 @@ The project is divided into several components:
 - Asynchronous task processing using Celery and Redis.
 - Interactive dashboards and visualizations using Flask, Dash & Plotly.
 - RESTful API for accessing exhibition statistics.
-- Simple table interface for users to interact with foundamental DB Entities.
+- Simple table interface for users to interact with fundamental DB Entities.
+- Centralized configuration management.
+
+## Configuration
+
+The application uses a centralized configuration system that combines default values with environment variables:
+
+1. Default configuration values are defined in `config/default_config.py`.
+2. Environment variables can override these defaults (see `.env.example` for available variables).
+3. Configuration is accessed through the `config` module.
+
+To configure the application:
+
+1. Copy `.env.example` to `.env` and modify as needed.
+2. Environment variables will override the default values.
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/VasilisAvgoustakis/fut_exhibition_statistic.git
+   cd fut_exhibition_statistic
+   ```
+
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+3. Configure the application by copying `.env.example` to `.env` and modifying as needed.
+
+4. Start the application using Docker Compose:
+   ```
+   docker-compose up -d
+   ```
 
 ## Screenshots
 
