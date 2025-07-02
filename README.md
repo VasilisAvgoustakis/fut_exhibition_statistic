@@ -61,16 +61,11 @@ To configure the application:
    cd fut_exhibition_statistic
    ```
 
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+2. Configure the application by copying `.env.example` to a new `.env` file and modifying as needed.
 
-3. Configure the application by copying `.env.example` to `.env` and modifying as needed.
-
-4. Start the application using Docker Compose:
+4. Start the application using Docker Compose: the command below will build all necessary images and create and start all containers.
    ```
-   docker-compose up -d
+   docker-compose up --build -d
    ```
 
 ## Screenshots
