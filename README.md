@@ -38,16 +38,36 @@ The project is divided into several components:
 - Asynchronous task processing using Celery and Redis.
 - Interactive dashboards and visualizations using Flask, Dash & Plotly.
 - RESTful API for accessing exhibition statistics.
-- Simple table interface for users to interact with foundamental DB Entities.
+- Simple table interface for users to interact with fundamental DB Entities.
+- Centralized configuration management.
 
-## Tech Stack & Responsibilities
+## Configuration
 
-- Python (Flask, pandas, NumPy), MySQL, Redis, Celery
-- Dash & Plotly for interactive dashboards and data visualization
-- MQTT for ingesting time-series interaction events from RFID devices
-- Docker & Docker Compose for multi-service orchestration
+The application uses a centralized configuration system that combines default values with environment variables:
 
-This project was designed and implemented end-to-end by me, including data modelling, backend services, ETL logic, and dashboard design.
+1. Default configuration values are defined in `config/default_config.py`.
+2. Environment variables can override these defaults (see `.env.example` for available variables).
+3. Configuration is accessed through the `config` module.
+
+To configure the application:
+
+1. Copy `.env.example` to `.env` and modify as needed.
+2. Environment variables will override the default values.
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/VasilisAvgoustakis/fut_exhibition_statistic.git
+   cd fut_exhibition_statistic
+   ```
+
+2. Configure the application by copying `.env.example` to a new `.env` file and modifying as needed.
+
+4. Start the application using Docker Compose: the command below will build all necessary images and create and start all containers.
+   ```
+   docker-compose up --build -d
+   ```
 
 ## Screenshots
 
