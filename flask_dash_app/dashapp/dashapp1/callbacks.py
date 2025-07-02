@@ -37,7 +37,7 @@ def update_yesterdays_date():
         str: Yesterday's date in YYYY-MM-DD format
     """
     today = datetime.now()
-    yesterday = today - timedelta(days=1)
+    yesterday = today #- timedelta(days=1)
     return yesterday.date().strftime('%Y-%m-%d')
 
 def register_callbacks(dashapp):
@@ -259,7 +259,7 @@ def register_callbacks(dashapp):
             string_prefix = string_prefix + 'End Date: ' + local_end_date_str
         else:
             config.start_date_string = '2020-09-23'
-            config.end_date_string = config.yesterday.strftime('%Y-%m-%d')  
+            config.end_date_string = update_yesterdays_date() 
 
         # Reload the queries module to reflect the changes in other modules
         importlib.reload(qrs)    
