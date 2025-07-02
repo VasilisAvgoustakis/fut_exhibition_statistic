@@ -2,7 +2,7 @@ import dash
 from flask import Flask
 from dashapp.dashapp1.layout import serve_layout
 from .dashapp1.callbacks import register_callbacks
-from .dashapp1.callbacks import init_db_pool
+#from .dashapp1.callbacks import init_db_pool
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -21,7 +21,7 @@ def init_dash(flask_app):
     # add layout to app
     dash_app.layout = serve_layout # Note: Pass the function itself, not the result of the function
     # initiate connection pool to db
-    init_db_pool()
+    #init_db_pool()
     # register callbacks to dash app
     register_callbacks(dash_app)
 

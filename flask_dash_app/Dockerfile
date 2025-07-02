@@ -2,13 +2,13 @@
 FROM python:3.9
 
 # Set the working directory inside the container
-WORKDIR /flask_dash_app
+# WORKDIR /flask_dash_app not needed, as we set it in docker-compose.yml
 
 # Copy the requirements file to the working directory
 COPY requirements.txt .
 
 # Install the Python dependencies
-RUN pip install --no-cache-dir -r /flask_dash_app/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code to the working directory
 COPY . .

@@ -39,7 +39,7 @@ def process_daily_scans():
         current_time = now.time()
         stop_time = config.check_end_times()
         
-
+        logger.info("Current time: %s, Stop time: %s", current_time, stop_time)
         if current_time > stop_time:
             logger.info("Parsing daily scans to DB...")
             
@@ -84,7 +84,7 @@ def process_daily_scans():
                                 except ValueError as e:
                                     logger.error("Error at scan string processing: %s", e)
                                 except Exception as e:
-                                    logger.exception("Exception at scan string processing")
+                                    #logger.exception("Exception at scan string processing")
                                     multiple_scan_combi_counter += 1
                             
                             # Commit all changes at once

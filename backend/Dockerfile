@@ -2,13 +2,13 @@
 FROM python:3.9
 
 # Set the working directory inside the container
-WORKDIR /backend
+#WORKDIR /backend not needed, as we set it in docker-compose.yml
 
 # Copy the requirements file to the working directory
 COPY requirements.txt .
 
 # Install the Python dependencies
-RUN pip install --no-cache-dir -r /backend/requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code to the working directory
 COPY . .

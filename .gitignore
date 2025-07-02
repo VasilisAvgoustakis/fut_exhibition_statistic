@@ -1,11 +1,16 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+# Environment variables file
+.env 
+# Database Content
+db/data
+db/data/** 
 
 backend/network_traffic_archives/
 backend/network_traffic_archives/token_archive_log.txt
 backend/network_traffic_archives/token_daily_log.txt
-redis/data/dump.rdb
+redis/data/
 backend/logs/
 flask_dash_app/logs/
 Exhibition_Statistics/flask_dash_app/logs
