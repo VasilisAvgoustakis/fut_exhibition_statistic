@@ -13,6 +13,8 @@ import pandas as pd
 from datetime import date, datetime, timedelta
 import time
 from utils import db, redis_client
+from queries import graph_queries as qrs
+from utils.db import get_db_connection, get_db_cursor
 
 # Set up logging
 logger = config.setup_logging("flask_dash_app")
@@ -89,8 +91,8 @@ def register_callbacks(dashapp):
         if (input_id == 'dropdown' \
             or n_clicks == 0) \
             and \
-            (not graph_name == gv.graph_types[8] \
-            and not graph_name == gv.graph_types[9])  :
+            (not graph_name == config.GRAPH_TYPES[8] \
+            and not graph_name == config.GRAPH_TYPES[9])  :
             
             # show an empty figure
             fig = go.Figure()
@@ -105,8 +107,8 @@ def register_callbacks(dashapp):
 
         # for path graphs warn user of extensive loading times if long time periods are selected
         elif input_id == 'dropdown' and \
-            (graph_name == gv.graph_types[8] \
-            or graph_name == gv.graph_types[9]):
+            (graph_name == config.GRAPH_TYPES[8] \
+            or graph_name == config.GRAPH_TYPES[9]):
             return dcc.Markdown(('''
                                 **Bitte selektiere ein Zeitfenstern und drucke "Submit"!**
                                  
@@ -119,7 +121,7 @@ def register_callbacks(dashapp):
         # this only executes if the user has used the submit button and updates the graphs
         else:
             # get the index of the selected graph type
-            sel_graph_index = gv.graph_types.index(graph_name)
+            sel_graph_index = config.GRAPH_TYPES.index(graph_name)
             #print(sel_graph_index)
             # get the query with the same list index as the selected graph type
             selected_query = qrs.queries[sel_graph_index]
@@ -130,7 +132,7 @@ def register_callbacks(dashapp):
 
 
             # # replace the direct fetch from db with enqueu logic
-            # task_id = enqueue_query(selected_query, gv.start_date_string, gv.end_date_string)
+            # task_id = enqueue_query(selected_query, config.start_date_string, config.end_date_string)
             # print("Task_id: ", task_id)
             # # check periodically if result data are available in redis
             # # Initialize result data
@@ -242,7 +244,7 @@ def register_callbacks(dashapp):
         if start_date is not None:
             start_date_object = date.fromisoformat(start_date)
             #update global variable start date
-            gv.start_date_string = start_date_object.strftime('%Y-%m-%d')
+            config.start_date_string = start_date_object.strftime('%Y-%m-%d')
 
             # set local string var for start date
             local_start_date_str = start_date_object.strftime('%B-%d, %Y')
@@ -250,18 +252,18 @@ def register_callbacks(dashapp):
         if end_date is not None:
             end_date_object = date.fromisoformat(end_date)
             # update global variable end date
-            gv.end_date_string = end_date_object.strftime('%Y-%m-%d')
+            config.end_date_string = end_date_object.strftime('%Y-%m-%d')
 
             # set local string var for end date
             local_end_date_str = end_date_object.strftime('%B-%d, %Y')
             string_prefix = string_prefix + 'End Date: ' + local_end_date_str
         else:
-            gv.start_date_string = '2020-09-23'
-            gv.end_date_string = gv.yesterday.strftime('%Y-%m-%d')  
+            config.start_date_string = '2020-09-23'
+            config.end_date_string = config.yesterday.strftime('%Y-%m-%d')  
 
         # Reload the queries module to reflect the changes in other modules
         importlib.reload(qrs)    
-        valid_daterange = toggle_btn_activation_for_valid_daterange(gv.start_date_string, gv.end_date_string)  
+        valid_daterange = toggle_btn_activation_for_valid_daterange(config.start_date_string, config.end_date_string)  
         
 
 
@@ -278,7 +280,7 @@ def register_callbacks(dashapp):
     def toggle_btn_activation_for_valid_daterange(start_date, end_date):
         btn_style = {'color': 'grey', 'background_color': 'grey'}
         btn_disbl = False
-        if date.fromisoformat(gv.start_date_string) > date.fromisoformat(gv.end_date_string) :
+        if date.fromisoformat(config.start_date_string) > date.fromisoformat(config.end_date_string) :
             return False
         else: return True
 
@@ -436,7 +438,7 @@ def register_callbacks(dashapp):
                                                             row['DB ID']))  # assuming 'id' exists in each row
                 conn.commit()
             #print(style_data_conditional)
-            return "Data updated successfully!", gv.style_data_conditional # if all goes well return original styles
+            return "Data updated successfully!", config.style_data_conditional # if all goes well return original styles
         
     
     @dashapp.callback(
@@ -446,12 +448,12 @@ def register_callbacks(dashapp):
         prevent_initial_call=True
     )
     def downloaf_csv(n_clicks, graph_name):
-        if gv.csv_file_data.empty:
+        if config.csv_file_data.empty:
             raise PreventUpdate
         else:
-            filename = str(date.today()) + '_Data_von_' + gv.start_date_string + '_bis_' + \
-                    gv.end_date_string + '_' + graph_name + ".csv"
-            return dcc.send_data_frame(gv.csv_file_data.to_csv, filename )
+            filename = str(date.today()) + '_Data_von_' + config.start_date_string + '_bis_' + \
+                    config.end_date_string + '_' + graph_name + ".csv"
+            return dcc.send_data_frame(config.csv_file_data.to_csv, filename )
 
     @dashapp.callback(
         Output({'type': 'dynamic-graph', 'index': 'random-paths-graph'}, 'figure'),
@@ -466,8 +468,8 @@ def register_callbacks(dashapp):
 
 
 
-        data_df = gv.csv_file_data
-        coordinates = gv.coord_dict
+        data_df = config.csv_file_data
+        coordinates = config.coord_dict
 
         # Create a list of unique (band_code, date) tuples
         unique_combinations = pd.unique(list(zip(data_df['code'], data_df['date'])))
@@ -549,6 +551,6 @@ def register_callbacks(dashapp):
             #                         name=path[-1]
             #                         ))
             
-            fig.update(layout_title_text=gv.random_paths_msg,
+            fig.update(layout_title_text=config.random_paths_msg,
                    layout_showlegend=True)
         return fig
