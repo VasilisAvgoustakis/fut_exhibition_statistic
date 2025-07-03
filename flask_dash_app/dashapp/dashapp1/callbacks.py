@@ -37,7 +37,7 @@ def update_yesterdays_date():
         str: Yesterday's date in YYYY-MM-DD format
     """
     today = datetime.now()
-    yesterday = today #- timedelta(days=1)
+    yesterday = today - timedelta(days=1)
     return yesterday.date().strftime('%Y-%m-%d')
 
 def register_callbacks(dashapp):
