@@ -391,7 +391,7 @@ def register_callbacks(dashapp):
                                                             row['DB ID']))  # assuming 'id' exists in each row
                 conn.commit()
             #print(style_data_conditional)
-            return "Data updated successfully!", config.style_data_conditional # if all goes well return original styles
+            return "Data updated successfully!", config.TABLE_STYLE_DATA_CONDITIONAL # if all goes well return original styles
         
     
     @dashapp.callback(

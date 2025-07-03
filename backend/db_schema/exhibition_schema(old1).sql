@@ -14,7 +14,7 @@
 -- -----------------------------------------------------
 -- Schema futurium_exhibition_stats
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `futurium_exhibition_stats` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `futurium_exhibition_stats` DEFAULT CHARACTER SET utf8 ;pro
 USE `futurium_exhibition_stats` ;
 
 -- -----------------------------------------------------

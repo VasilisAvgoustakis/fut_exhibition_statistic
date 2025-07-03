@@ -113,8 +113,7 @@ services:
       - 3308:3306
     restart: unless-stopped
     volumes:
-      # db schema did not work correctly when container was build and had to manually import it through php admin, check whats wrong before rebuilding this service
-      - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro
+      - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro # for this to work /var/lib/mysql must be empty
       - ./db/config:/etc/mysql/conf.d
       - ./db/data:/var/lib/mysql
     healthcheck:
