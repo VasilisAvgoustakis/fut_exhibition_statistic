@@ -5,7 +5,8 @@ from dash.dependencies import Input, Output, State, ALL
 from dash.exceptions import PreventUpdate
 import plotly.graph_objs as go
 import config
-from flask_dash_app.queries import QUERIES, TOKEN_STATIONS_TABLE
+import flask_dash_app.queries
+from flask_dash_app.queries import QUERIES as queries, TOKEN_STATIONS_TABLE as token_stations_table
 from flask_dash_app.plotting import plotters
 import importlib
 from dash import dcc, html, callback_context, no_update
@@ -13,7 +14,6 @@ import pandas as pd
 from datetime import date, datetime, timedelta
 import time
 from utils import db, redis_client
-from queries import graph_queries as qrs
 from utils.db import get_db_connection, get_db_cursor
 
 # Set up logging
@@ -122,45 +122,13 @@ def register_callbacks(dashapp):
         else:
             # get the index of the selected graph type
             sel_graph_index = config.GRAPH_TYPES.index(graph_name)
-            #print(sel_graph_index)
+
             # get the query with the same list index as the selected graph type
-            selected_query = qrs.queries[sel_graph_index]
-            #print(selected_query)
+            selected_query = queries[sel_graph_index]
+
             # fetch the right data only 
             data = fetch_data_from_db(selected_query)
 
-
-
-            # # replace the direct fetch from db with enqueu logic
-            # task_id = enqueue_query(selected_query, config.start_date_string, config.end_date_string)
-            # print("Task_id: ", task_id)
-            # # check periodically if result data are available in redis
-            # # Initialize result data
-            # data = None
-            # # Poll Redis for the result, with a timeout (for example, 10 seconds)
-            # timeout = 20  # seconds
-            # start_time = time.time()
-            
-
-            # while time.time() - start_time < timeout:
-            #     if redis_db.exists(f"result:{task_id}"):
-            #         # If result exists, break the loop and proceed
-            #         result_json = redis_db.get(f"result:{task_id}")
-            #         print(result_json)
-            #         data = json.loads(result_json)
-            #         break
-            #     else:
-            #         # Sleep for a short time to prevent a tight loop
-            #         time.sleep(0.5)  # Adjust sleep time as needed
-
-            # if not data:
-            #     raise PreventUpdate  # If no data after timeout, prevent update
-
-
-
-
-            # print("Data: ")
-            print(data)
             pie_figs=[]
             
             # for double graphs
@@ -231,9 +199,10 @@ def register_callbacks(dashapp):
         
         Output('output-container-date-picker-range', 'children')
         ,
-        [Input('my-date-picker-range', 'start_date'),
-        Input('my-date-picker-range', 'end_date'),
-        Input('submit-dates', 'n_clicks')
+        [
+            Input('my-date-picker-range', 'start_date'),
+            Input('my-date-picker-range', 'end_date'),
+            Input('submit-dates', 'n_clicks')
         ]
     )
     def update_output_date_picker(start_date, end_date, n_clicks):
@@ -262,7 +231,7 @@ def register_callbacks(dashapp):
             config.end_date_string = update_yesterdays_date() 
 
         # Reload the queries module to reflect the changes in other modules
-        importlib.reload(qrs)    
+        importlib.reload(flask_dash_app.queries)    
         valid_daterange = toggle_btn_activation_for_valid_daterange(config.start_date_string, config.end_date_string)  
         
 
@@ -300,11 +269,9 @@ def register_callbacks(dashapp):
     )
     def edit_token_stations(n_clicks):
         # fetch data
-        data = fetch_token_stations(qrs.token_stations_table)
+        data = fetch_token_stations(token_stations_table)
         # turn to dataframe
         df = pd.DataFrame(data)
-        # drop the first column with the db ids of the stations
-        #df = df.drop(df.columns[0], axis=1)
         # name columns for the app
         df.columns = ["DB ID", "Station ID", "Station Name", "Installation Date", "Denkraum", "Station Typ", "Archiviert", "X Koordinate", "Y Koordinate", "Corona Offset"]
         # unique values from the Denkraum column of the df.
@@ -315,20 +282,6 @@ def register_callbacks(dashapp):
         denkraum_options = [{'label': val, 'value': val} for val in unique_denkraum_values]
         # construct dropdown option dynamically 
         station_typ_options = [{'label': val, 'value': val} for val in unique_station_typ_values]
-
-        # columns = [{'name': col, 'id': col, 'editable': (col in ['DB ID',
-        #                                                         'Station Name', 
-        #                                                          'Denkraum', 
-        #                                                          'Station Typ', 
-        #                                                          'X Koordinate', 
-        #                                                          "Y Koordinate", 
-        #                                                          "Corona Offset"]
-                    #)} 
-                    # if col not in ['Denkraum', 'Station Typ'] 
-                    # else {'name': col, 'id': col, 'editable': True, 'presentation': 'dropdown', 'type': 'text'}
-                    # for col in df.columns]
-        
-        
 
         dropdown_data = {
                         'Denkraum': {
