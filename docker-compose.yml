@@ -122,7 +122,8 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
-      - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro # for this to work /var/lib/mysql must be empty
+      # MySQL entrypoint executes this SQL file only on a fresh datadir (i.e. when /var/lib/mysql is empty). With existing data it is ignored.
+      - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro
       - /home/administrator/db/config:/etc/mysql/conf.d
       - /home/administrator/db/data:/var/lib/mysql
 
