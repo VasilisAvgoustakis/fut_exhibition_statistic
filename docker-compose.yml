@@ -123,8 +123,9 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
       - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro # for this to work /var/lib/mysql must be empty
-      - ./db/config:/etc/mysql/conf.d
-      - ./db/data:/var/lib/mysql
+      - /home/administrator/db/config:/etc/mysql/conf.d
+      - /home/administrator/db/data:/var/lib/mysql
+
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "--silent"]
       interval: 10s
