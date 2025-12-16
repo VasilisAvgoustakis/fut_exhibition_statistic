@@ -4,6 +4,7 @@ These can be overridden by environment variables.
 """
 import os
 from datetime import datetime, date, timedelta
+import pandas as pd
 
 # Database configuration
 DB_CONFIG = {
@@ -108,3 +109,9 @@ TABLE_STYLE_DATA_CONDITIONAL = [
         'backgroundColor': 'rgba(0, 0, 255, 0.5)'
     }
 ]
+
+# CSV Downloads
+# this global var stores the final df data as were plotted by the corresponding triggered graph
+# to be optionally downloaded by the user as CSV
+CSV_FILE_DATA=pd.DataFrame()
+COORD_DICT ={} # matching container for coordinates so all shared Dash state lives in one module.

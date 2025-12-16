@@ -22,9 +22,6 @@ logger = config.setup_logging("flask_dash_app")
 # Variables
 current_month = date.today().month
 
-# CSV data storage
-csv_file_data = pd.DataFrame()
-
 # Coordinate dictionary for path visualization
 coord_dict = {}
 
@@ -399,12 +396,12 @@ def register_callbacks(dashapp):
         prevent_initial_call=True
     )
     def downloaf_csv(n_clicks, graph_name):
-        if config.csv_file_data.empty:
+        if config.CSV_FILE_DATA.empty:
             raise PreventUpdate
         else:
             filename = str(date.today()) + '_Data_von_' + config.STATS_DATE_RANGES['start_date'] + '_bis_' + \
                     config.STATS_DATE_RANGES['end_date'] + '_' + graph_name + ".csv"
-            return dcc.send_data_frame(config.csv_file_data.to_csv, filename )
+            return dcc.send_data_frame(config.CSV_FILE_DATA.to_csv, filename )
 
     @dashapp.callback(
         Output({'type': 'dynamic-graph', 'index': 'random-paths-graph'}, 'figure'),
@@ -419,8 +416,8 @@ def register_callbacks(dashapp):
 
 
 
-        data_df = config.csv_file_data
-        coordinates = config.coord_dict
+        data_df = config.CSV_FILE_DATA
+        coordinates = config.COORD_DICT
 
         # Create a list of unique (band_code, date) tuples
         unique_combinations = pd.unique(list(zip(data_df['code'], data_df['date'])))

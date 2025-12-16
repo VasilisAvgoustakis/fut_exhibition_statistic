@@ -4,7 +4,7 @@ from dash import dcc
 from dash import html
 import os
 import base64
-import global_variables as gv
+import config
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 from datetime import datetime as dt
@@ -16,8 +16,8 @@ def plot_total_scans_tk(data):
     df.columns = ['Token Station', 'Name', 'Area', 'Scans', 'Archived']
 
     # store data for CSV export
-    gv.csv_file_data = df
-    #print(gv.csv_file_data)
+    config.CSV_FILE_DATA = df
+    
 
     #print(df)
     df_human = df[(df['Area'] == 'human') &
@@ -47,7 +47,7 @@ def plot_total_scans_tk(data):
     ]
     )
 
-    fig.update(layout_title_text=gv.query_total_scans_tk_msg ,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["query_total_scans_tk_msg"] ,
            layout_showlegend=True)
 
     # pie
@@ -75,19 +75,19 @@ def plot_total_scans_tk(data):
 
     # Tune layout and hover info
     pie_mensch.update(
-        layout_title_text=gv.query_total_scans_tk_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["query_total_scans_tk_msg_pie"],
         layout_showlegend=True)
     
     pie_tech.update(
-        layout_title_text=gv.query_total_scans_tk_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["query_total_scans_tk_msg_pie"],
         layout_showlegend=True)
     
     pie_nature.update(
-        layout_title_text=gv.query_total_scans_tk_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["query_total_scans_tk_msg_pie"],
         layout_showlegend=True)
     
     pie_interactive.update(
-        layout_title_text=gv.query_total_scans_tk_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["query_total_scans_tk_msg_pie"],
         layout_showlegend=True)
 
     
@@ -99,7 +99,7 @@ def plot_avg_scans(data):
     df.columns = ['Token Station', 'Name', 'Area', 'Scans', 'From', 'Up to', 'Months passed', 'Archived', 'Average per Month']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
 
     df_human = df[(df['Area'] == 'human') &
@@ -130,7 +130,7 @@ def plot_avg_scans(data):
         go.Bar(name='Archived Interaktiv', x=df_archived_interactive[x_axis], y=df_archived_interactive[y_axis], text='Archiviert', textposition='auto'),
     ]
     )
-    fig.update(layout_title_text=gv.avg_scans_pro_monat_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_pro_monat_msg"],
            layout_showlegend=True)
 
     # pie
@@ -158,19 +158,19 @@ def plot_avg_scans(data):
 
     # Tune layout and hover info
     pie_mensch.update(
-        layout_title_text=gv.avg_scans_pro_monat_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_pro_monat_msg_pie"],
         layout_showlegend=True)
     
     pie_tech.update(
-        layout_title_text=gv.avg_scans_pro_monat_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_pro_monat_msg_pie"],
         layout_showlegend=True)
     
     pie_nature.update(
-        layout_title_text=gv.avg_scans_pro_monat_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_pro_monat_msg_pie"],
         layout_showlegend=True)
     
     pie_interactive.update(
-        layout_title_text=gv.avg_scans_pro_monat_msg_pie,
+        layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_pro_monat_msg_pie"],
         layout_showlegend=True)
 
     
@@ -182,7 +182,7 @@ def plot_total_per_region(data):
     df.columns = ['Area', 'Number of Stations', 'Total Scans']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     # Create a pie chart
     labels = df.iloc[:, 0].astype(str) + " - " + df.iloc[:, 1].astype(str) + " Stations"
@@ -195,7 +195,7 @@ def plot_total_per_region(data):
                                  texttemplate=' %{value} Scans, %{percent}'
                                  )])
     
-    fig.update(layout_title_text=gv.total_scans_per_region_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["total_scans_per_region_msg"],
            layout_showlegend=True)
     return fig
 
@@ -204,7 +204,7 @@ def plot_avg_per_region_per_station(data):
     df.columns = ['Area', 'Number of Stations', 'Total Scans', 'Average per Station']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     # Create a pie chart
     labels = df.iloc[:, 0].astype(str) + " - " + df.iloc[:, 1].astype(str) + " Stations"
@@ -217,7 +217,7 @@ def plot_avg_per_region_per_station(data):
                                  texttemplate=' %{value:.1f} Scans, %{percent}'
                                  )])
     
-    fig.update(layout_title_text=gv.avg_scans_per_region_per_station_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_per_region_per_station_msg"],
            layout_showlegend=True)
     return fig
 
@@ -226,7 +226,7 @@ def plot_avg_time_per_visitor(data):
     df.columns = ['Technik', 'Mensch', 'Natur', 'Interaktiv']
     
     # store data for CSV export
-    gv.csv_file_data = df.iloc[:-1] #exclude last row containg the #of stations per region
+    config.CSV_FILE_DATA = df.iloc[:-1] #exclude last row containg the #of stations per region
 
     # Create a pie chart
     # the 1st row of the data is the time in minutes
@@ -241,7 +241,7 @@ def plot_avg_time_per_visitor(data):
                                  texttemplate='%{value} Min, %{percent}'
                                  )])
     
-    fig.update(layout_title_text=gv.avg_time_per_visitro_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["avg_time_per_visitro_msg"],
            layout_showlegend=True)
 
     return fig
@@ -251,7 +251,7 @@ def plot_visitors_per_day(data):
     df.columns = ['Date', 'Total Armbands', 'ZM Scans']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     total_visitors = df['Total Armbands'].sum()
     total_zm_scans = df['ZM Scans'].sum()
@@ -305,7 +305,7 @@ def plot_visitors_per_day(data):
         showarrow=False,
     )
 
-    fig.update(layout_title_text=gv.total_visitors_per_day_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["total_visitors_per_day_msg"],
            layout_showlegend=True)
 
     return fig
@@ -315,7 +315,7 @@ def plot_avg_scans_per_visitor(data):
     df.columns = ['Area', 'Total Scans', 'Total Visitors', 'avg_per_visitor_per_area', 'Total Visitors all regions']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     labels = df['Area']
     values = df['avg_per_visitor_per_area']
@@ -358,7 +358,7 @@ def plot_avg_scans_per_visitor(data):
         showarrow=False,
     )
 
-    fig.update(layout_title_text=gv.avg_scans_per_visitor_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["avg_scans_per_visitor_msg"],
            layout_showlegend=True)
     
     return fig
@@ -368,7 +368,7 @@ def plot_scans_per_visitor_percentile(data):
     df.columns = ['Bucket', 'Armbandanzahl']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     fig = go.Figure()
 
@@ -409,7 +409,7 @@ def plot_vote_scans_per_question(data):
     df.columns = ['Station', 'Name', 'Total Scans']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     # Assume that the station group identifier is all but the last character of the 'Station' string
     df['StationGroup'] = df['Station'].str[:-1]
@@ -459,7 +459,7 @@ def plot_vote_scans_per_question(data):
         
     
 
-    fig.update(layout_title_text=gv.vote_scans_per_question_msg,
+    fig.update(layout_title_text= config.GRAPH_INFO_TEXTS["vote_scans_per_question_msg"],
            layout_showlegend=False)
 
     return fig
@@ -470,7 +470,7 @@ def plot_probable_path(data):
     df.columns = ['code', 'station', 'name', 'date', 'time', 'x_coord', 'y_coord']
 
     # store data for CSV export
-    gv.csv_file_data = df
+    config.CSV_FILE_DATA = df
 
     # segregate the data by each unique armband code, sort it by time, 
     # and then count the transitions between stations in the transtion_count dictionary.
@@ -671,7 +671,7 @@ def plot_probable_path(data):
                             name=path[-1]
                             ))
     
-    fig.update(layout_title_text=gv.probable_path_msg,
+    fig.update(layout_title_text=config.GRAPH_INFO_TEXTS["probable_path_msg"],
            layout_showlegend=True)
 
     return fig
@@ -708,7 +708,7 @@ def derive_random_paths(data):
     # print(random_paths)
 
     # store data for CSV export
-    gv.csv_file_data = random_paths
+    config.CSV_FILE_DATA = random_paths
     
 
     # add the image to the graph & initialize figure
@@ -741,69 +741,7 @@ def derive_random_paths(data):
 
     # Map station to coordinates
     # Create a dictionary to map station IDs to their x and y coordinates
-    gv.coord_dict = {row['name']: (row['x_coord'], row['y_coord']) for _, row in random_paths.drop_duplicates('name').iterrows()}
-
-    # Function to interpolate points along the line
-    #def interpolate_points(x1, y1, x2, y2, num_arrows=3):
-        #return [(x1 + i*(x2-x1)/num_arrows, y1 + i*(y2-y1)/num_arrows) for i in range(1, num_arrows)]
-
-
-    # Draw lines for the most probable path
-    # for i in range(len(path) - 1):
-        
-    #     #if "Vote" not in path[i] : # again catch the case of the variable name but same coordinates for Vote stations
-    #     x1, y1 = coord_dict[path[i]]
-    #     from_station = path[i]
-    #     #if "Vote" not in path[i+1]:
-    #     x2, y2 = coord_dict[path[i+1]]
-    #     to_station = path[i+1]
-        
-
-    #     # Add points for the stations
-    #     fig.add_trace(go.Scatter(x=[coord_dict[from_station][0]], y=[coord_dict[from_station][1]],
-    #                             mode='markers',
-    #                             marker=dict(size=10),
-    #                             name=path[i]
-    #                             ))
-
-
-    #     # # Add an arrow annotation at the endpoint of the line
-    #     fig.add_annotation(
-    #         x=x2, y=y2,
-    #         ax=x1, ay=y1,
-    #         xref='x', yref='y',
-    #         axref='x', ayref='y',
-    #         showarrow=True,
-    #         arrowhead=1,
-    #         arrowsize=2,
-    #         arrowwidth=1,
-    #         arrowcolor="red"
-    #     )
-
-    #     # Add arrow annotations along the line
-    #     for point in interpolate_points(x1, y1, x2, y2, num_arrows=3):
-    #         fig.add_annotation(
-    #             x=point[0], y=point[1],
-    #             ax=point[0] - (x2 - x1) / 20,  # Adjust these values as necessary for arrow direction
-    #             ay=point[1] - (y2 - y1) / 20,  # Adjust these values as necessary for arrow direction
-    #             xref='x', yref='y',
-    #             axref='x', ayref='y',
-    #             showarrow=True,
-    #             arrowhead=1,
-    #             arrowsize=2,
-    #             arrowwidth=1,
-    #             arrowcolor="red"
-    #         )
-
-    # Add last trace for ZM
-    #fig.add_trace(go.Scatter(x=[coord_dict[path[-1]][0]], y=[coord_dict[path[-1]][1]],
-                            # mode='markers',
-                            # marker=dict(size=10),
-                            # name=path[-1]
-                            # ))
-    
-    # fig.update(layout_title_text=gv.random_paths_msg,
-    #        layout_showlegend=True)
+    config.COORD_DICT = {row['name']: (row['x_coord'], row['y_coord']) for _, row in random_paths.drop_duplicates('name').iterrows()}
 
     return fig
 
