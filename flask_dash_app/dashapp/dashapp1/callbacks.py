@@ -50,11 +50,7 @@ def register_callbacks(dashapp):
     # Test Redis connection
     redis_client.test_redis_connection()
     
-    # Current date range for queries
-    start_date = config.STATS_DATE_RANGES["start_date"]
-    end_date = config.STATS_DATE_RANGES["end_date"]
-    
-    def fetch_data_from_db(query):
+    def fetch_data_from_db(query, start_date=config.STATS_DATE_RANGES['start_date'], end_date=config.STATS_DATE_RANGES['end_date']):
         """
         Fetch data from the database using the specified query.
         
@@ -77,11 +73,13 @@ def register_callbacks(dashapp):
         [
         Input('submit-dates', 'n_clicks'),
         Input('dropdown', 'value')
-        ]
+        ],
+        State('my-date-picker-range', 'start_date'),
+        State('my-date-picker-range', 'end_date')
     )
-    def update_graph(n_clicks, graph_name): 
+    def update_graph(n_clicks, graph_name, start_date, end_date): 
 
-        # get the context fo the callback to determine what triggered it
+        # get the context for the callback to determine what triggered it
         context = callback_context
 
         # get the id of the input component that triggered the callback
@@ -127,7 +125,7 @@ def register_callbacks(dashapp):
             selected_query = queries[sel_graph_index]
 
             # fetch the right data only 
-            data = fetch_data_from_db(selected_query)
+            data = fetch_data_from_db(selected_query, start_date, end_date)
 
             pie_figs=[]
             
@@ -213,7 +211,7 @@ def register_callbacks(dashapp):
         if start_date is not None:
             start_date_object = date.fromisoformat(start_date)
             #update global variable start date
-            config.start_date_string = start_date_object.strftime('%Y-%m-%d')
+            config.STATS_DATE_RANGES['start_date'] = start_date_object.strftime('%Y-%m-%d')
 
             # set local string var for start date
             local_start_date_str = start_date_object.strftime('%B-%d, %Y')
@@ -221,18 +219,18 @@ def register_callbacks(dashapp):
         if end_date is not None:
             end_date_object = date.fromisoformat(end_date)
             # update global variable end date
-            config.end_date_string = end_date_object.strftime('%Y-%m-%d')
+            config.STATS_DATE_RANGES['end_date'] = end_date_object.strftime('%Y-%m-%d')
 
             # set local string var for end date
             local_end_date_str = end_date_object.strftime('%B-%d, %Y')
             string_prefix = string_prefix + 'End Date: ' + local_end_date_str
         else:
-            config.start_date_string = '2020-09-23'
-            config.end_date_string = update_yesterdays_date() 
+            config.STATS_DATE_RANGES['start_date'] = '2020-09-23'
+            config.STATS_DATE_RANGES['end_date'] = update_yesterdays_date() 
 
         # Reload the queries module to reflect the changes in other modules
         importlib.reload(flask_dash_app.queries)    
-        valid_daterange = toggle_btn_activation_for_valid_daterange(config.start_date_string, config.end_date_string)  
+        valid_daterange = toggle_btn_activation_for_valid_daterange(config.STATS_DATE_RANGES['start_date'], config.STATS_DATE_RANGES['end_date'])  
         
 
 
@@ -249,7 +247,7 @@ def register_callbacks(dashapp):
     def toggle_btn_activation_for_valid_daterange(start_date, end_date):
         btn_style = {'color': 'grey', 'background_color': 'grey'}
         btn_disbl = False
-        if date.fromisoformat(config.start_date_string) > date.fromisoformat(config.end_date_string) :
+        if date.fromisoformat(config.STATS_DATE_RANGES['start_date']) > date.fromisoformat(config.STATS_DATE_RANGES['end_date']) :
             return False
         else: return True
 
@@ -404,8 +402,8 @@ def register_callbacks(dashapp):
         if config.csv_file_data.empty:
             raise PreventUpdate
         else:
-            filename = str(date.today()) + '_Data_von_' + config.start_date_string + '_bis_' + \
-                    config.end_date_string + '_' + graph_name + ".csv"
+            filename = str(date.today()) + '_Data_von_' + config.STATS_DATE_RANGES['start_date'] + '_bis_' + \
+                    config.STATS_DATE_RANGES['end_date'] + '_' + graph_name + ".csv"
             return dcc.send_data_frame(config.csv_file_data.to_csv, filename )
 
     @dashapp.callback(
