@@ -14,6 +14,8 @@ services:
     ports:
       - "6379:6379"
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./redis/data:/data  # Optional: persistent storage for Redis
     restart: unless-stopped
     environment:
@@ -42,6 +44,8 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     working_dir: /app/redis/worker
     container_name: worker_container
     environment:
@@ -62,7 +66,8 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
-      - /etc/localtime:/app/backend/etc/localtime:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     working_dir: /app/backend
     environment:
       <<: *common-variables
@@ -85,7 +90,8 @@ services:
         condition: service_healthy
     volumes:
       - ./:/app
-      - /etc/localtime:/app/flask_dash_app/etc/localtime:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
     working_dir: /app/flask_dash_app
     environment:
       <<: *common-variables
@@ -109,10 +115,13 @@ services:
       <<: *common-variables
       MYSQL_HOST: localhost
       MYSQL_ROOT_PASSWORD: toor
+      TZ: Europe/Berlin
     ports:
       - 3308:3306
     restart: unless-stopped
     volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
       - ./backend/db_schema/exhibition_schema.sql:/docker-entrypoint-initdb.d/exhibition_schema.sql:ro # for this to work /var/lib/mysql must be empty
       - ./db/config:/etc/mysql/conf.d
       - ./db/data:/var/lib/mysql
