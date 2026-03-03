@@ -68,6 +68,7 @@ services:
       - ./:/app
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+    restart: unless-stopped
     working_dir: /app/backend
     environment:
       <<: *common-variables
@@ -92,6 +93,7 @@ services:
       - ./:/app
       - /etc/localtime:/etc/localtime:ro
       - /etc/timezone:/etc/timezone:ro
+    restart: unless-stopped
     working_dir: /app/flask_dash_app
     environment:
       <<: *common-variables
